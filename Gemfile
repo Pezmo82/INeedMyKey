@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
+
+# Use dotenv for storing credentials and configuration information
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
+
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.13', '< 0.5'
 # Use SCSS for stylesheets
@@ -27,8 +31,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
-
-gem 'dotenv'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
