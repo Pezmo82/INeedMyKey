@@ -1,0 +1,33 @@
+/* FORMS */
+.field, .button {
+	margin: 8px;
+}
+.label {
+	font-size: 1em;
+}
+.input, .button { /* For all form fields to remove default styling */
+    text-align: center;
+    font-weight: bold;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-border-radius: none;
+    border-radius: 0;	
+    border: 1px solid $storm;
+}
+.input, .button {
+	width: 200px;
+	height: 30px;
+}
+.button {
+	background-color: $purpley;
+	color: $white;
+	font-size: 1em;
+}
+.checkbox {
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}

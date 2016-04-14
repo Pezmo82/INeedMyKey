@@ -1,0 +1,30 @@
+/* CORE */
+
+ *, *:before, *:after {
+    outline: 0;
+    -webkit-box-sizing: border-box !important;
+       -moz-box-sizing: border-box !important;
+            box-sizing: border-box !important;
+}
+.group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* MAIN */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+    font-weight: 400;
+}
+body {
+    font-size: 1.6rem;
+    font-family: 'Montserrat', sans-serif;
+    background-color: $purpley;
+    color: $storm;    
+}
+
