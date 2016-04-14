@@ -5,7 +5,7 @@ FONTS
 	margin: 8px 0;
 }
 .label, .formlink {
-	font-size: 1em;
+	font-size: $normal;
 }
 .input, .button { /* For all form fields to remove default styling */
     text-align: center;
@@ -21,14 +21,14 @@ FONTS
 .input, .button {
 	width: 200px;
 	height: 30px;
+	font-size: $normal;
 }
 .input:focus, .input:hover {
-	background-color: $cloud;
+    background-color: $cloud;
 }
 .button {
-	background-color: $purpley;
-	color: $white;
-	font-size: $normal;
+    background-color: $purpley;
+    color: $white;
 }
 .checkbox {
     -moz-transform: scale(1.5);
