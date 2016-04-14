@@ -1,0 +1,16 @@
+/********************
+MENU
+********************/
+.navLink {
+    width: 240px;
+    display: block;
+    padding: 10px 5px;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: $white;
+    border-bottom: 1px solid $white;
+}
+.navLink:focus, .navLink:hover {
+    color: $lilac;
+    border-bottom: 1px solid $lilac;   
+}
