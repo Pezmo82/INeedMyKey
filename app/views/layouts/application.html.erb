@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>IneedMyKey</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+	<head>
+		<title>I Need My Key</title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+		<%= favicon_link_tag %>
+	</head>
 <body>
 
-<%= yield %>
+
+	<div class="wrapper group">
+
+		<div class="side">
+			<div class="logo"></div>
+				
+				<%= link_to "Home", root_path, :class => "navLink" %> 
+
+				<% if user_signed_in? %>
+					<%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => "navLink" %>  
+					<a href="" class="navLink">Account</a>
+				<% else %>
+					<%= link_to "Login", new_user_session_path, :class => "navLink" %>  
+				<% end %>
+
+					
+		</div>
+
+		<div class="contentWrapper">
+			<%= yield %>
+		</div>
+
+	</div>
+
 
 </body>
 </html>
