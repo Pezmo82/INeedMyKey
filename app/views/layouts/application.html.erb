@@ -18,23 +18,23 @@
 			<% end %>
 				
 				<%= link_to "Home", root_path, :class => "navLink" %> 
-
-				<% if user_signed_in? %>
-					<%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => "navLink" %>  
-					<a href="" class="navLink">Account</a>
-				<% else %>
-					<%= link_to "Login", new_user_session_path, :class => "navLink" %>  
-				<% end %>
-
-					
+				<%= link_to "Contact", contact_path, :class => "navLink" %> 
+			<% if user_signed_in? %>
+				<%= link_to "Log Out", destroy_user_session_path, :method => :delete, :class => "navLink" %>  
+				<a href="" class="navLink">Account</a>
+			<% else %>
+				<%= link_to "Log In", new_user_session_path, :class => "navLink" %> 
+				<%= link_to "Sign Up", new_user_registration_path, :class => "navLink" %>
+			<% end %>		
 		</div>
+
 
 		<div class="contentWrapper">
 			<%= yield %>
 		</div>
 
-	</div>
 
+	</div>
 
 </body>
 </html>
