@@ -1,3 +1,6 @@
+/********************
+CONTENT
+********************/
 .wrapper {
     width: 100%;
     margin: 0;
@@ -9,8 +12,6 @@
     margin-bottom: 40px;
     display: block;
     background-image: url(logo.png);
-    /*OR*/
-    /*background-image: url(logo.svg);*/
     background-repeat: no-repeat;
     background-size: contain; 
 }
@@ -20,14 +21,12 @@
     padding: 20px;   
 }
 .contentWrapper {
-    width: calc(100% - 300px);
-    height: 480px; /* REMOVE */    
+    width: calc(100% - 300px);   
     float: left;
     margin: 20px 20px 0 0; 
     padding: 20px;
     background-color: $white;
 }
-
 
 /* MENU */
 .navLink {
@@ -39,7 +38,6 @@
     color: $white;
     border-bottom: 1px solid $white;
 }
-
 .navLink:focus, .navLink:hover {
     color: $lilac;
     border-bottom: 1px solid $lilac;   
