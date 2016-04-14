@@ -7,18 +7,21 @@ CONTENT
     padding: 0;
 }
 .logo {
-    width: 280px;
+    width: 260px;
     height: 80px;
-    margin-bottom: 40px;
+    margin: 20px 20px 40px 20px;
     display: block;
     background-image: url(logo.png);
     background-repeat: no-repeat;
     background-size: contain; 
 }
+.logo:hover {
+    opacity: 0.3;
+    cursor: pointer;
+}
 .side {
     width: 280px;
-    float: left;
-    padding: 20px;   
+    float: left; 
 }
 .contentWrapper {
     width: calc(100% - 300px);   
@@ -26,19 +29,4 @@ CONTENT
     margin: 20px 20px 0 0; 
     padding: 20px;
     background-color: $white;
-}
-
-/* MENU */
-.navLink {
-    width: 240px;
-    display: block;
-    padding: 10px 5px;
-    font-size: 1.2em;
-    text-decoration: none;
-    color: $white;
-    border-bottom: 1px solid $white;
-}
-.navLink:focus, .navLink:hover {
-    color: $lilac;
-    border-bottom: 1px solid $lilac;   
 }

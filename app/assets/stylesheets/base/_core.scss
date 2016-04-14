@@ -3,8 +3,11 @@
  *, *:before, *:after {
     outline: 0;
     -webkit-box-sizing: border-box !important;
-       -moz-box-sizing: border-box !important;
-            box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease; 
+    font-weight: 400;      
 }
 .group:after {
     content: "";

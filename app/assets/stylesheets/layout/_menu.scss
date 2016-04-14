@@ -2,15 +2,18 @@
 MENU
 ********************/
 .navLink {
-    width: 240px;
+    width: 80%;
+    margin: 0 auto;
     display: block;
-    padding: 10px 5px;
+    padding: 10px 10%;
     font-size: 1.2em;
     text-decoration: none;
     color: $white;
-    border-bottom: 1px solid $white;
+    border-bottom: 1px solid $white;  
 }
 .navLink:focus, .navLink:hover {
+    width: 90%;
+    padding-left: 15%;
     color: $lilac;
     border-bottom: 1px solid $lilac;   
 }
