@@ -1,12 +1,15 @@
 /********************
 MENU
 ********************/
+.menuIcon {
+    display: none;
+}
 .navLink {
     width: 80%;
     margin: 0 auto;
     display: block;
     padding: 10px 10%;
-    font-size: 1.2em;
+    font-size: $large;
     text-decoration: none;
     color: $white;
     border-bottom: 1px solid $white;  
@@ -16,4 +19,43 @@ MENU
     padding-left: 15%;
     color: $lilac;
     border-bottom: 1px solid $lilac;   
+}
+
+@media (max-width: 1000px) {
+    .menu {
+        width: 300px;
+        float: left;
+        max-height: 40px;
+        margin: 40px 0 auto 0;
+        cursor: pointer;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+    }
+    .menu:hover, .menu:focus {
+        max-height: 1000px;
+        transition: max-height 0.5s ease-in;
+        overflow: visible;
+    }
+    .menuIcon {
+        display: block;
+        color: $white;
+    }
+    .fa-bars {
+        margin-left: 40px;
+        line-height: $xlarge; 
+    }
+}
+
+@media (max-width: 600px) {
+    .menu {
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+    .menuIcon {
+       text-align: center; 
+    }
+    .fa-bars {
+        margin: 0 auto;
+    }
 }

@@ -24,9 +24,33 @@ CONTENT
     float: left; 
 }
 .contentWrapper {
-    width: calc(100% - 300px);   
+    width: calc(100% - 300px); 
+    min-height: 400px;  
     float: left;
     margin: 20px 20px 0 0; 
     padding: 20px;
     background-color: $white;
+}
+
+@media (max-width: 1000px) {
+    .logo {
+        float: left;
+        margin-bottom: 0;
+    }
+    .side {
+        width: 100%;
+        max-height: 1000px;
+    }
+    .contentWrapper {
+        width: calc(100% - 40px); 
+        margin: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo {
+        margin: 20px auto 10px auto;
+        float: none;
+        display: block;
+    }
 }
