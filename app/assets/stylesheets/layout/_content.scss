@@ -3,6 +3,7 @@ CONTENT
 ********************/
 .wrapper {
     width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -24,14 +25,58 @@ CONTENT
     float: left; 
 }
 .contentWrapper {
-    width: calc(100% - 300px); 
-    min-height: 400px;  
+    width: 1000px;
+    height: auto !important; 
+    height: calc(100% - 40px); 
+    min-height: calc(100% - 40px); 
     float: left;
-    margin: 20px 20px 0 0; 
+    margin: 20px 20px 20px 0; 
     padding: 20px;
     background-color: $white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;        
 }
 
+/********************
+BOX
+********************/
+.boxWrapper {
+    width: 100%;
+    overflow: hidden;
+}
+.box {
+    width: calc(100% / 3 - 14px);
+    float: left;
+    margin: 0 0 -1000px 0;
+    padding-bottom: 1000px;
+    background-color: $purpley;
+    color: $white;
+    text-align: center; 
+    text-shadow: 4px 4px 5px rgba(85,85,85,0.8);           
+}
+.box:nth-child(2) {
+    margin: 0 20px -1000px 20px;
+}
+.boxIcon {
+    color: $lilac;
+}
+.boxHeading, .boxText {
+    margin: 0;
+    padding: 20px;
+}
+.boxHeading {
+    font-size: $xlarge;
+}
+.boxText {
+    font-size: $small;
+}
+
+@media (max-width: 1400px) {
+    .contentWrapper {
+        width: calc(100% - 300px);
+    }
+}
 @media (max-width: 1000px) {
     .logo {
         float: left;
@@ -43,6 +88,9 @@ CONTENT
     }
     .contentWrapper {
         width: calc(100% - 40px); 
+        height: auto !important; 
+        height: calc(100% - 140px); 
+        min-height: calc(100% - 140px);     
         margin: 20px;
     }
 }
@@ -52,5 +100,14 @@ CONTENT
         margin: 20px auto 10px auto;
         float: none;
         display: block;
+    }
+    .box, .box:nth-child(2) {
+        float: none;
+        width: 300px;
+        margin: 0 auto;
+        padding-bottom: 0; 
+    }
+    .box:nth-child(2) {
+        margin: 20px auto;
     }
 }
