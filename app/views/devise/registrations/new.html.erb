@@ -9,6 +9,20 @@
     </div>
 
     <div class="field">
+
+      <%= f.label :mobile_number %><br />
+      <%= f.text_field :mobile_number, autocomplete: "off" %>
+
+    </div>
+
+    <div class="field">
+
+      <%= f.label :mobile_number_confirmation %><br />
+      <%= f.text_field :mobile_number_confirmation, autocomplete: "off" %>
+
+    </div>
+
+    <div class="field">
         <%= f.label :password %>
         <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
