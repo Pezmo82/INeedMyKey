@@ -9,7 +9,12 @@
     </div>
 
     <div class="field">
-      
+        <%= f.label :email_confirmation, class: "label" %><br />
+        <%= f.email_field :email_confirmation, autocomplete: "off", class: "input" %>
+    </div>
+
+    <div class="field">
+
       <%= f.label :mobile_number %><br />
       <%= f.text_field :mobile_number, autocomplete: "off" %>
 
