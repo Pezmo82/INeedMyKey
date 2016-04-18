@@ -1,0 +1,67 @@
+/********************
+MENU
+********************/
+.menuIcon {
+    display: none;
+}
+.menuIcon, .navLink {
+    text-shadow: 4px 4px 5px rgba(85,85,85,0.8);
+}
+.navLink {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    padding: 10px 10%;
+    font-size: $large;
+    text-decoration: none;
+    color: $white;
+    border-bottom: 1px solid $white; 
+    box-shadow: 0 4px 2px -2px rgba(85,85,85,0.8);      
+}
+.navLink:focus, .navLink:hover {
+    width: 90%;
+    padding-left: 15%;
+    color: $lilac;
+    border-bottom: 1px solid $lilac;   
+}
+
+@media (max-width: 1000px) {
+    .menu {
+        width: 300px;
+        float: left;
+        max-height: 40px;
+        margin: 40px 0 auto 0;
+        cursor: pointer;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+    }
+    .menu:hover, .menu:focus {
+        max-height: 1000px;
+        transition: max-height 0.5s ease-in;
+        overflow: visible;
+    }
+    .menuIcon {
+        margin: 0 0 20px 25px;
+        display: block;
+        color: $white;
+    }
+    .fa-bars {
+        margin-left: 40px;
+        line-height: $xlarge; 
+    }
+}
+
+@media (max-width: 600px) {
+    .menu {
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+    .menuIcon {
+        margin-left: 0;
+        text-align: center; 
+    }
+    .fa-bars {
+        margin: 0 auto;
+    }
+}

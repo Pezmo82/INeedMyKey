@@ -6,25 +6,32 @@
 		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		<%= csrf_meta_tags %>
 		<%= favicon_link_tag %>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	</head>
 <body>
-
 
 	<div class="wrapper group">
 
 		<div class="side">
-			<div class="logo"></div>
+			<%= link_to root_path do %>
+				<div class="logo"></div>
+			<% end %>
 				
-				<%= link_to "Home", root_path, :class => "navLink" %> 
+			<div class="menu">
+				<div class="menuIcon">
+					<i class="fa fa-bars fa-3x"></i>
+				</div>
 
+					<%= link_to "Home", root_path, :class => "navLink", :onClick => "" %> 
+					<%= link_to "Contact", contact_path, :class => "navLink", :onClick => "" %> 
 				<% if user_signed_in? %>
-					<%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => "navLink" %>  
-					<a href="" class="navLink">Account</a>
+					<%= link_to "Account", account_path, :class => "navLink", :onClick => "" %> 
+					<%= link_to "Log Out", destroy_user_session_path, :method => :delete, :class => "navLink", :onClick => "" %> 
 				<% else %>
-					<%= link_to "Login", new_user_session_path, :class => "navLink" %>  
+					<%= link_to "Log In", new_user_session_path, :class => "navLink", :onClick => "" %> 
+					<%= link_to "Sign Up", new_user_registration_path, :class => "navLink", :onClick => "" %> 
 				<% end %>
-
-					
+			</div>		
 		</div>
 
 		<div class="contentWrapper">
@@ -32,7 +39,6 @@
 		</div>
 
 	</div>
-
 
 </body>
 </html>

@@ -1,9 +1,11 @@
-/* FORMS */
+/********************
+FONTS
+********************/
 .field, .button {
-	margin: 8px;
+	margin: 8px 0;
 }
-.label {
-	font-size: 1em;
+.label, .formlink {
+	font-size: $normal;
 }
 .input, .button { /* For all form fields to remove default styling */
     text-align: center;
@@ -14,15 +16,19 @@
     -webkit-border-radius: none;
     border-radius: 0;	
     border: 1px solid $storm;
+    cursor: pointer;
 }
 .input, .button {
 	width: 200px;
 	height: 30px;
+	font-size: $normal;
+}
+.input:focus, .input:hover {
+    background-color: $cloud;
 }
 .button {
-	background-color: $purpley;
-	color: $white;
-	font-size: 1em;
+    background-color: $purpley;
+    color: $white;
 }
 .checkbox {
     -moz-transform: scale(1.5);
@@ -30,4 +36,14 @@
     -o-transform: scale(1.5);
     -webkit-transform: scale(1.5);
     transform: scale(1.5);
+}
+.formLink {
+	display: block;
+	padding-top: 15px;
+}
+.button:focus, .button:hover {
+	color: $lilac;
+}
+.formLink:focus, .formLink:hover {
+	text-decoration: none;
 }

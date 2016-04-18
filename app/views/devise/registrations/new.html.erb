@@ -1,15 +1,15 @@
-<h2>Sign up</h2>
+<h1 class="mainHeading">Sign Up</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
     <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
+        <%= f.label :email, class: "label" %><br />
+        <%= f.email_field :email, autofocus: true, class: "input" %>
     </div>
 
     <div class="field">
-
+      
       <%= f.label :mobile_number %><br />
       <%= f.text_field :mobile_number, autocomplete: "off" %>
 
@@ -23,20 +23,26 @@
     </div>
 
     <div class="field">
-        <%= f.label :password %>
+
+        <%= f.label :password, class: "label" %>
+
         <% if @minimum_password_length %>
+
             <em>(<%= @minimum_password_length %> characters minimum)</em>
+
         <% end %><br />
-            <%= f.password_field :password, autocomplete: "off" %>
+
+        <%= f.password_field :password, autocomplete: "off", class: "input" %>
+
     </div>
 
     <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.label :password_confirmation, class: "label" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "input" %>
     </div>
 
     <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.button "Sign Up", type: :submit, class: "button" %>
     </div>
 <% end %>
 

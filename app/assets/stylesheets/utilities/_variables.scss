@@ -1,8 +1,31 @@
-/* WIDTHS */
-$desktop-width: 900px;
+/********************
+WIDTHS
+********************/
+$small-screen: 300px;
+
+$large-desktop: 1400px;
+
+
+/********************
+FONTS
+********************/
+
+/* FONT SIZES */
+$xsmall: .6em;
+$small: .8em;
+$normal: 1em;
+$large: 1.2em;
+$xlarge: 1.4em;
+$xxlarge: 1.6em;
+
+
+/********************
+COLORS
+********************/
 
 /* SHADES */
 $white: #FFF;
+$cloud: #F6F6F6;
 $storm: #555;
 
 /* PURPLES */
