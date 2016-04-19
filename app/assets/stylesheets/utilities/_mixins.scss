@@ -1,19 +1,56 @@
-// Define our breakpoints
+/* BREAKPOINTS */
 @mixin breakpoint($point) {
-
   @if $point == small {
       @media (min-width: 500px) { @content; }
   }
   @else if $point == medium {
       @media (min-width: 768px) { @content; }
   }
-  @else if $point == medium-large {
-      @media (min-width: 960px) { @content; }
-  }
-  @else if $point == large {
-      @media (min-width: $desktop-width) { @content; }
-  }
-  @else if $point == huge {
-      @media (min-width: 1900px) { @content; }
-  }
+}
+
+/* BORDER RADIUS */
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+/* TRANSITION */
+@mixin transition {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;      
+}
+
+/* TEXT SHADOW */
+@mixin text-shadow {
+    text-shadow: 4px 4px 5px rgba(85,85,85,0.8);
+}
+
+/* BOX SHADOW */
+@mixin box-shadow {
+    box-shadow: 0 4px 2px -2px rgba(85,85,85,0.8);
+}
+
+/* BOX SIZING */
+@mixin box-sizing {
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;    
+}
+
+/* SCALE */
+@mixin scale {
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);    
+}
+
+/* APPERANCE */
+ @mixin apperance {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }

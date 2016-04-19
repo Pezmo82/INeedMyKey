@@ -1,12 +1,12 @@
-/* CORE */
-
+/********************
+CORE
+********************/
  *, *:before, *:after {
     outline: 0;
-    -webkit-box-sizing: border-box !important;
-    -moz-box-sizing: border-box !important;
-    box-sizing: border-box !important;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease; 
+    @include box-sizing;
+    -webkit-tap-highlight-color: transparent;
+    border-style: none;
+    cursor: default;    
     font-weight: 400;      
 }
 .group:after {
@@ -14,10 +14,8 @@
     display: table;
     clear: both;
 }
-
-/* MAIN */
 html, body {
-    height: 100%;
+    height: $hundred;
     margin: 0;
     padding: 0;
 }

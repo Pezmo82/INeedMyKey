@@ -9,14 +9,12 @@ FONTS
 }
 .input, .button { /* For all form fields to remove default styling */
     text-align: center;
-    font-weight: bold;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     -webkit-border-radius: none;
-    border-radius: 0;	
+    border-radius: 0;   
     border: 1px solid $storm;
     cursor: pointer;
+    @include apperance;
+    @include box-shadow;
 }
 .input, .button {
 	width: 200px;
@@ -31,11 +29,7 @@ FONTS
     color: $white;
 }
 .checkbox {
-    -moz-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
+    @include scale;
 }
 .formLink {
 	display: block;

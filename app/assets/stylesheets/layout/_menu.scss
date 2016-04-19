@@ -5,7 +5,10 @@ MENU
     display: none;
 }
 .menuIcon, .navLink {
-    text-shadow: 4px 4px 5px rgba(85,85,85,0.8);
+    @include text-shadow;
+}
+.menu, .navLink {
+    @include transition;    
 }
 .navLink {
     width: 80%;
@@ -16,7 +19,10 @@ MENU
     text-decoration: none;
     color: $white;
     border-bottom: 1px solid $white; 
-    box-shadow: 0 4px 2px -2px rgba(85,85,85,0.8);      
+    @include box-shadow;     
+}
+.navLink:last-child {
+    margin-bottom: 20px;
 }
 .navLink:focus, .navLink:hover {
     width: 90%;
@@ -24,6 +30,9 @@ MENU
     color: $lilac;
     border-bottom: 1px solid $lilac;   
 }
+
+
+
 
 @media (max-width: 1000px) {
     .menu {
@@ -50,7 +59,6 @@ MENU
         line-height: $xlarge; 
     }
 }
-
 @media (max-width: 600px) {
     .menu {
         float: none;
