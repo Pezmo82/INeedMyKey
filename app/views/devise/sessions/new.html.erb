@@ -1,26 +1,29 @@
 <h1 class="mainHeading">Log In</h1>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-        <%= f.label :email, class: "label" %><br />
-        <%= f.email_field :email, autofocus: true, class: "input" %>
-    </div>
+<div class="formWrapper">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+            <%= f.label :email, class: "label" %><br />
+            <%= f.email_field :email, autofocus: true, class: "input" %>
+        </div>
 
-    <div class="field">
-        <%= f.label :password, class: "label" %><br />
-        <%= f.password_field :password, autocomplete: "off", class: "input" %>
-    </div>
+        <div class="field">
+            <%= f.label :password, class: "label" %><br />
+            <%= f.password_field :password, autocomplete: "off", class: "input" %>
+        </div>
 
-        <% if devise_mapping.rememberable? -%>
-            <div class="field">
-                <%= f.check_box :remember_me, class: "checkbox" %>
-                <%= f.label :remember_me, class: "label" %>
-            </div>
-        <% end -%>
+            <% if devise_mapping.rememberable? -%>
+                <div class="field">
+                    <%= f.check_box :remember_me, class: "userInput checkBox" %>
+                    <%= f.label :remember_me, class: "label" %>
+                </div>
+            <% end -%>
 
-    <div class="actions">
-        <%= f.button "Log In", type: :submit, class: "button" %>
-    </div>
-<% end %>
+        <div class="actions">
+            <%= f.button "Log In", type: :submit, class: "button" %>
+        </div>
+    <% end %>
 
-<%= render "devise/shared/links" %>
+    <%= render "devise/shared/links" %>
+
+</div>

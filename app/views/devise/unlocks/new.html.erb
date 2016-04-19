@@ -1,17 +1,18 @@
 <h1 class="mainHeading">Resend Unlock Instructions</h1>
 
-<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-	<%= devise_error_messages! %>
+<div class="formWrapper">
+	<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+		<%= devise_error_messages! %>
 
-  	<div class="field">
-    	<%= f.label :email, class: "label" %><br />
-    	<%= f.email_field :email, autofocus: true, class: "input" %>
-  	</div>
+	  	<div class="field">
+	    	<%= f.label :email, class: "label" %><br />
+	    	<%= f.email_field :email, autofocus: true, class: "input" %>
+	  	</div>
 
-  	<div class="actions">
-    	<%= f.button "Resend", type: :submit, class: "button" %>
-  	</div>
-<% end %>
+	  	<div class="actions">
+	    	<%= f.button "Resend", type: :submit, class: "button" %>
+	  	</div>
+	<% end %>
 
-
-<%= render "devise/shared/links" %>
+	<%= render "devise/shared/links" %>
+</div>

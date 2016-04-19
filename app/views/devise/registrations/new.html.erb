@@ -1,54 +1,47 @@
 <h1 class="mainHeading">Sign Up</h1>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
+<div class="formWrapper">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
 
-    <div class="field">
-        <%= f.label :email, class: "label" %><br />
-        <%= f.email_field :email, autofocus: true, class: "input" %>
-    </div>
+        <div class="field">
+            <%= f.label :email, class: "label" %><br />
+            <%= f.email_field :email, autofocus: true, class: "input" %>
+        </div>
 
-    <div class="field">
-        <%= f.label :email_confirmation, class: "label" %><br />
-        <%= f.email_field :email_confirmation, autocomplete: "off", class: "input" %>
-    </div>
+        <div class="field">
+            <%= f.label :email_confirmation, class: "label" %><br />
+            <%= f.email_field :email_confirmation, autocomplete: "off", class: "input" %>
+        </div>
 
-    <div class="field">
+        <div class="field">
+            <%= f.label :mobile_number, class: "label" %><br />
+            <%= f.text_field :mobile_number, autocomplete: "off", class: "input" %>
+        </div>
 
-      <%= f.label :mobile_number %><br />
-      <%= f.text_field :mobile_number, autocomplete: "off" %>
+        <div class="field">
+            <%= f.label :mobile_number_confirmation, class: "label" %><br />
+            <%= f.text_field :mobile_number_confirmation, autocomplete: "off", class: "input" %>
+        </div>
 
-    </div>
+        <div class="field">
+            <%= f.label :password, class: "label" %><br />
+                <% if @minimum_password_length %>
+                    <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br />
+            <%= f.password_field :password, autocomplete: "off", class: "input" %>
+        </div>
 
-    <div class="field">
+        <div class="field">
+            <%= f.label :password_confirmation, class: "label" %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: "input" %>
+        </div>
 
-      <%= f.label :mobile_number_confirmation %><br />
-      <%= f.text_field :mobile_number_confirmation, autocomplete: "off" %>
+        <div class="actions">
+            <%= f.button "Sign Up", type: :submit, class: "button" %>
+        </div>
+    <% end %>
 
-    </div>
+    <%= render "devise/shared/links" %>
 
-    <div class="field">
-
-        <%= f.label :password, class: "label" %>
-
-        <% if @minimum_password_length %>
-
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-
-        <% end %><br />
-
-        <%= f.password_field :password, autocomplete: "off", class: "input" %>
-
-    </div>
-
-    <div class="field">
-        <%= f.label :password_confirmation, class: "label" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: "input" %>
-    </div>
-
-    <div class="actions">
-        <%= f.button "Sign Up", type: :submit, class: "button" %>
-    </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>    
