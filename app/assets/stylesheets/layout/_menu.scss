@@ -1,15 +1,64 @@
 /********************
 MENU
 ********************/
+
+/* MENU ICON */
 .menuIcon {
     display: none;
-}
-.menuIcon, .navLink {
+    cursor: pointer; 
     @include text-shadow;
+
+    @include breakpoint(largeScreen) {
+        display: block;
+        margin: 0 0 20px 25px;
+        color: $white;
+    } 
+    @include breakpoint(smallScreen) {
+        margin-left: 0;
+        text-align: center;   
+    }    
 }
-.menu, .navLink {
+.fa-bars {
+
+    @include breakpoint(largeScreen) {
+        margin-left: 40px;
+        line-height: $xlarge; 
+    }
+    @include breakpoint(smallScreen) {
+        margin: 0 auto;
+        cursor: pointer; 
+    }
+}
+
+/* MENU */
+.menu {
     @include transition;    
+    
+    @include breakpoint(largeScreen) {
+        width: 300px;
+        float: left;
+        max-height: 40px;
+        margin: 40px 0 auto 0;
+        cursor: pointer;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+    }  
+    @include breakpoint(smallScreen) {
+        float: none;
+        display: block;
+        margin: 0 auto;  
+    }  
 }
+.menu:hover, .menu:focus {
+
+    @include breakpoint(largeScreen) {
+        max-height: 1000px;
+        transition: max-height 0.5s ease-in;
+        overflow: visible;
+    }
+}
+
+/* LINKS */
 .navLink {
     width: 80%;
     margin: 0 auto;
@@ -19,7 +68,10 @@ MENU
     text-decoration: none;
     color: $white;
     border-bottom: 1px solid $white; 
-    @include box-shadow;     
+    @include box-shadow; 
+    @include transition; 
+    @include text-shadow;
+    cursor: pointer;       
 }
 .navLink:last-child {
     margin-bottom: 20px;
@@ -29,47 +81,4 @@ MENU
     padding-left: 15%;
     color: $lilac;
     border-bottom: 1px solid $lilac;   
-}
-
-
-
-
-@media (max-width: 1000px) {
-    .menu {
-        width: 300px;
-        float: left;
-        max-height: 40px;
-        margin: 40px 0 auto 0;
-        cursor: pointer;
-        overflow: hidden;
-        transition: max-height 0.5s ease-out;
-    }
-    .menu:hover, .menu:focus {
-        max-height: 1000px;
-        transition: max-height 0.5s ease-in;
-        overflow: visible;
-    }
-    .menuIcon {
-        margin: 0 0 20px 25px;
-        display: block;
-        color: $white;
-    }
-    .fa-bars {
-        margin-left: 40px;
-        line-height: $xlarge; 
-    }
-}
-@media (max-width: 600px) {
-    .menu {
-        float: none;
-        display: block;
-        margin: 0 auto;
-    }
-    .menuIcon {
-        margin-left: 0;
-        text-align: center; 
-    }
-    .fa-bars {
-        margin: 0 auto;
-    }
 }

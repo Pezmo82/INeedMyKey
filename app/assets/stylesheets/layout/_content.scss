@@ -7,23 +7,14 @@ CONTENT
     margin: 0;
     padding: 0;
 }
-.logo {
-    width: 260px;
-    height: 80px;
-    margin: 20px;
-    display: block;
-    background-image: url(logo.png);
-    background-repeat: no-repeat;
-    background-size: contain; 
-    @include transition;      
-}
-.logo:hover {
-    opacity: 0.3;
-    cursor: pointer;
-}
 .side {
     width: 280px;
     float: left; 
+
+    @include breakpoint(largeScreen) {
+        width: $hundred;
+        max-height: 1000px;        
+    }
 }
 .contentWrapper {
     width: 1000px;
@@ -35,7 +26,45 @@ CONTENT
     padding: 20px;
     background-color: $white;
     @include border-radius(10px);
-    @include transition;        
+    @include transition; 
+
+    @include breakpoint(xlargeScreen) {
+        width: calc(100% - 300px);
+    } 
+    @include breakpoint(largeScreen) {
+        width: calc(100% - 40px); 
+        height: calc(100% - 140px); 
+        min-height: calc(100% - 140px);     
+        margin: 20px;  
+    }    
+}
+
+/********************
+LOGO
+********************/
+.logo {
+    width: 260px;
+    height: 80px;
+    margin: 20px;
+    display: block;
+    background-image: url(logo.png);
+    background-repeat: no-repeat;
+    background-size: contain; 
+    @include transition; 
+
+    @include breakpoint(largeScreen) {
+        float: left;
+        margin-bottom: 0;
+    }   
+    @include breakpoint(smallScreen) {
+        margin: 20px auto 10px auto;
+        float: none;
+        display: block;  
+    }  
+}
+.logo:hover {
+    opacity: 0.3;
+    cursor: pointer;
 }
 
 /********************
@@ -54,10 +83,22 @@ BOX
     color: $white;
     text-align: center; 
     @include text-shadow;
-    @include transition;                
+    @include transition;               
 }
 .box:nth-child(2) {
     margin: 0 20px -1000px 20px;
+
+    @include breakpoint(smallScreen) {
+        margin: 20px auto;
+    }
+}
+.box, .box:nth-child(2) {
+    @include breakpoint(smallScreen) {
+        float: none;
+        width: 260px;
+        margin: 0 auto;
+        padding-bottom: 0;    
+    }     
 }
 .boxIcon {
     color: $lilac;
@@ -71,47 +112,4 @@ BOX
 }
 .boxText {
     font-size: $small;
-}
-
-
-
-
-
-@media (max-width: 1400px) {
-    .contentWrapper {
-        width: calc(100% - 300px);
-    }
-}
-@media (max-width: 1000px) {
-    .logo {
-        float: left;
-        margin-bottom: 0;
-    }
-    .side {
-        width: $hundred;
-        max-height: 1000px;
-    }
-    .contentWrapper {
-        width: calc(100% - 40px); 
-        height: auto !important; 
-        height: calc(100% - 140px); 
-        min-height: calc(100% - 140px);     
-        margin: 20px;
-    }
-}
-@media (max-width: 600px) {
-    .logo {
-        margin: 20px auto 10px auto;
-        float: none;
-        display: block;
-    }
-    .box, .box:nth-child(2) {
-        float: none;
-        width: 260px;
-        margin: 0 auto;
-        padding-bottom: 0; 
-    }
-    .box:nth-child(2) {
-        margin: 20px auto;
-    }
 }

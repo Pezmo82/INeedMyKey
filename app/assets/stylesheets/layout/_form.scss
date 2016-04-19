@@ -1,43 +1,66 @@
 /********************
 FONTS
 ********************/
-.field, .button {
-	margin: 8px 0;
+.formWrapper {
+    width: 260px;
+    margin: 20px auto;
+    font-size: $normal;
+    text-transform: capitalize; 
+
+    @include breakpoint(xsmallScreen) {
+        width: $hundred;
+    }       
 }
-.label, .formlink {
-	font-size: $normal;
+.field {
+    margin: 10px 0;
 }
-.input, .button { /* For all form fields to remove default styling */
+.label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.input {
+    width: $hundred;
+    border: 1px solid $cloud;        
+}
+.input, .button { /* button input select checkbox etc */
+    height: 30px;
+    font-size: $normal;      
+    cursor: pointer; 
+    @include apperance;
+    @include box-shadow;
     text-align: center;
     -webkit-border-radius: none;
     border-radius: 0;   
-    border: 1px solid $storm;
-    cursor: pointer;
-    @include apperance;
+}
+.input, .button, .formLink {
+    @include transition;    
+}
+.checkBox {
+    @include scale;
     @include box-shadow;
-}
-.input, .button {
-	width: 200px;
-	height: 30px;
-	font-size: $normal;
-}
-.input:focus, .input:hover {
-    background-color: $cloud;
 }
 .button {
     background-color: $purpley;
     color: $white;
-}
-.checkbox {
-    @include scale;
+    padding: 0 20px;
+    margin: 10px auto 20px auto;
+    border: 1px solid $storm;       
 }
 .formLink {
-	display: block;
-	padding-top: 15px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    float: left;
+    clear: both;
+    text-decoration: none;     
 }
-.button:focus, .button:hover {
+.input:focus, .input:hover {
+    border: 1px solid $storm;
+}
+.input:focus, .input:hover, .button:focus, .button:hover {
+    box-shadow: none;
+}
+.button:focus, .button:hover, .formLink:focus, .formLink:hover {
 	color: $lilac;
+    @include transition;
 }
-.formLink:focus, .formLink:hover {
-	text-decoration: none;
-}
+

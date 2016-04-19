@@ -1,11 +1,20 @@
 /* BREAKPOINTS */
 @mixin breakpoint($point) {
-  @if $point == small {
-      @media (min-width: 500px) { @content; }
-  }
-  @else if $point == medium {
-      @media (min-width: 768px) { @content; }
-  }
+    @if $point == xlargeScreen {
+        @media (max-width: 1400px) { @content; }
+    }
+    @else if $point == largeScreen {
+        @media (max-width: 1000px) { @content; }
+    }
+    @else if $point == mediumScreen {
+        @media (max-width: 800px) { @content; }
+    }
+    @else if $point == smallScreen {
+        @media (max-width: 600px) { @content; }
+    }
+    @else if $point == xsmallScreen {
+        @media (max-width: 400px) { @content; }
+    }
 }
 
 /* BORDER RADIUS */
@@ -41,11 +50,11 @@
 
 /* SCALE */
 @mixin scale {
-    -moz-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);    
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);    
 }
 
 /* APPERANCE */
