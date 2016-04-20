@@ -5,7 +5,6 @@ MENU
 /* MENU ICON */
 .menuIcon {
     display: none;
-    cursor: pointer; 
     @include text-shadow;
 
     @include breakpoint(largeScreen) {
@@ -26,27 +25,25 @@ MENU
     }
     @include breakpoint(smallScreen) {
         margin: 0 auto;
-        cursor: pointer; 
     }
 }
 
 /* MENU */
 .menu {
-    @include transition;    
+    @include transition;
     
     @include breakpoint(largeScreen) {
         width: 300px;
         float: left;
         max-height: 40px;
         margin: 40px 0 auto 0;
-        cursor: pointer;
         overflow: hidden;
         transition: max-height 0.5s ease-out;
     }  
     @include breakpoint(smallScreen) {
         float: none;
         display: block;
-        margin: 0 auto;  
+        margin: 0 auto; 
     }  
 }
 .menu:hover, .menu:focus {

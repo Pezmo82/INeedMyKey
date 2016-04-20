@@ -1,5 +1,5 @@
 /********************
-FONTS
+FORM
 ********************/
 .formWrapper {
     width: 260px;
@@ -62,5 +62,26 @@ FONTS
 .button:focus, .button:hover, .formLink:focus, .formLink:hover {
 	color: $lilac;
     @include transition;
+}
+
+/********************
+ERRORS
+********************/
+.errorHeading {
+    font-size: $xlarge;
+    color: $errorRed;
+    margin: 0;
+    padding: 0;
+}
+.errorMessage {
+    margin: 0 0 0 20px;
+    padding: 0;
+    font-size: $normal;
+    color: $errorRed;
+}
+.field_with_errors {
+    width: $hundred;
+    display: inline-block;
+    color: $errorRed;
 }
 

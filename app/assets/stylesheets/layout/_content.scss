@@ -85,13 +85,6 @@ BOX
     @include text-shadow;
     @include transition;               
 }
-.box:nth-child(2) {
-    margin: 0 20px -1000px 20px;
-
-    @include breakpoint(smallScreen) {
-        margin: 20px auto;
-    }
-}
 .box, .box:nth-child(2) {
     @include breakpoint(smallScreen) {
         float: none;
@@ -99,6 +92,13 @@ BOX
         margin: 0 auto;
         padding-bottom: 0;    
     }     
+}
+.box:nth-child(2) {
+    margin: 0 20px -1000px 20px;
+
+    @include breakpoint(smallScreen) {
+        margin: 20px auto;
+    }
 }
 .boxIcon {
     color: $lilac;

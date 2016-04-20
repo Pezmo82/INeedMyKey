@@ -25,7 +25,7 @@
     border-radius: $radius;
 }
 
-/* TRANSITION */
+/* TRANSITIONS */
 @mixin transition {
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;      
