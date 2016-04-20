@@ -1,2 +1,20 @@
 <h1 class="mainHeading">Account</h1>
 <p>All account stuff</p>
+
+<h3>Change Password</h3>
+
+<%= form_for(password, url: edit_user_password_path(password), html: { method: :patch }) do |f| %>
+
+  <%= devise_error_messages! %>
+
+  <%= f.label :password, class: "label" %><br/>
+
+  <%= f.password_field :password, autofocus: true, required: true, class: "input" %>
+
+  <%= f.label :password_confirmation, class: "label" %><br/>
+
+  <%= f.password_field :password_confirmation, required: true, class: "input" %>
+
+  <%= f.button "Change Password", type: :submit, class: "button" %>
+
+<% end %>
