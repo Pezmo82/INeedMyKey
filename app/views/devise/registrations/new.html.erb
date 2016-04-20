@@ -2,7 +2,10 @@
 
 <div class="formWrapper">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
+        
+        <div class="errors">
+            <%= devise_error_messages! %>
+        </div>
 
         <div class="field">
             <%= f.label :email, class: "label" %><br />
