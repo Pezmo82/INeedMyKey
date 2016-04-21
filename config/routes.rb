@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   get "contact" => "static_pages#contact"
   get "account" => "users#account"
 
-  get "reset_password" => "users#resetpassword"
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
