@@ -5,7 +5,7 @@ MENU
 /* MENU ICON */
 .menuIcon {
     display: none;
-    color: $white;
+    color: $ghost;
     margin: 26px auto auto 50px;
     cursor: pointer;
     @include text-shadow;
@@ -38,10 +38,13 @@ MENU
 .menuIcon:hover + .menu, .menuIcon:focus + .menu, .menu:hover, .menu:focus {
 
     @include breakpoint(largeScreen) {
-        max-height: 120px;
+        max-height: 1000px;
         overflow: auto;
         transition: max-height 0.5s ease-in;
     }
+    @include breakpoint(shortScreen) {
+        max-height: 120px;
+    }    
 }
 /* Remove scrollbar from menu on scroll */
 .menu::-webkit-scrollbar { 
@@ -49,7 +52,7 @@ MENU
 }
 .menu {
     -ms-overflow-style: none; 
-    overflow: -moz-scrollbars-none; 
+    overflow: -moz-scrollbars-none;
 }
 
 /* LINKS */
@@ -60,8 +63,8 @@ MENU
     padding: 10px 10%;
     font-size: $large;
     text-decoration: none;
-    color: $white;
-    border-bottom: 1px solid $white; 
+    color: $ghost;
+    border-bottom: 1px solid $ghost; 
     @include box-shadow; 
     @include transition; 
     @include text-shadow;

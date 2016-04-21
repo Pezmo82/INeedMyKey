@@ -14,10 +14,11 @@ CONTENT
     @include breakpoint(largeScreen) {
         width: $hundred;
         position: fixed;
-        min-height: 100px;
+        min-height: 108px;
         clear: both;
         background-color: $purpley;
         overflow: hidden;
+        border-bottom: 8px solid $lilac;
     }
 }
 .innerSide {
@@ -35,7 +36,7 @@ CONTENT
     float: left;
     margin: 20px 20px 20px 0; 
     padding: 20px;
-    background-color: $white;
+    background-color: $ghost;
     @include border-radius(10px);
 
     @include breakpoint(xlargeScreen) {
@@ -43,11 +44,18 @@ CONTENT
     } 
     @include breakpoint(largeScreen) {
         width: calc(100% - 40px); 
-        height: calc(100% - 120px); 
-        min-height: calc(100% - 120px);     
-        margin: 100px 20px 20px 20px; 
+        height: calc(100% - 148px); 
+        min-height: calc(100% - 148px);     
+        margin: 128px 20px 20px 20px; 
 
-    }           
+    } 
+    @include breakpoint(smallScreen) {
+        width: $hundred;
+        height: calc(100% - 108px); 
+        min-height: calc(100% - 108px); 
+        @include border-radius(0);
+        margin: 108px 0 0 0;
+    }               
 }
 
 /********************
@@ -90,7 +98,7 @@ BOX
     margin: 0 0 -1000px 0;
     padding-bottom: 1000px;
     background-color: $purpley;
-    color: $white;
+    color: $ghost;
     text-align: center; 
     @include text-shadow;
     @include transition;               
