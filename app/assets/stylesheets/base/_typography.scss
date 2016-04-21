@@ -4,7 +4,29 @@ FONT STYLING
 .mainHeading {
     margin: 0;
 	padding: 0;
-	border-bottom: 4px solid $lilac;
+	/*border-bottom: 4px solid $lilac;*/
 	color: $purpley;
 	font-size: $xxlarge;
+}
+.mainText {
+	font-size: $normal;
+	margin: 0;
+	padding: 0;
+}
+
+
+/********************
+FADED HR
+********************/
+.faded {
+    border: 0;
+    height: 4px;
+    background: $lilac;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, hsla(256,36%,45%,1)), color-stop(50%, hsla(257,36%,68%,1)), color-stop(100%, hsla(0,0%,0%,0)));
+    background: -webkit-linear-gradient(left, hsla(256,36%,45%,1) 0%, hsla(257,36%,68%,1) 50%, hsla(0,0%,0%,0) 100%);
+    background:    -moz-linear-gradient(left, hsla(256,36%,45%,1) 0%, hsla(257,36%,68%,1) 50%, hsla(0,0%,0%,0) 100%);
+    background:     -ms-linear-gradient(left, hsla(256,36%,45%,1) 0%, hsla(257,36%,68%,1) 50%, hsla(0,0%,0%,0) 100%);
+    background:      -o-linear-gradient(left, hsla(256,36%,45%,1) 0%, hsla(257,36%,68%,1) 50%, hsla(0,0%,0%,0) 100%);
+    background:         linear-gradient(left, hsla(256,36%,45%,1) 0%, hsla(257,36%,68%,1) 50%, hsla(0,0%,0%,0) 100%);
+	margin-bottom: 20px;
 }

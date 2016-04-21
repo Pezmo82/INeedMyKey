@@ -78,7 +78,10 @@ LOGO
         margin: 0;
         top: 20px;
         right: 20px;
-    }   
+    }
+    @include breakpoint(smallScreen) {
+        right: 0;
+    }  
 }
 .logo:hover {
     opacity: 0.3;
@@ -90,6 +93,7 @@ BOX
 ********************/
 .boxWrapper {
     width: $hundred;
+    margin-top: 20px;
     overflow: hidden;
 }
 .box {
@@ -101,10 +105,10 @@ BOX
     color: $ghost;
     text-align: center; 
     @include text-shadow;
-    @include transition;               
+    @include transition;            
 }
 .box, .box:nth-child(2) {
-    @include breakpoint(smallScreen) {
+    @include breakpoint(mediumScreen) {
         float: none;
         width: 260px;
         margin: 0 auto;
@@ -114,7 +118,7 @@ BOX
 .box:nth-child(2) {
     margin: 0 20px -1000px 20px;
 
-    @include breakpoint(smallScreen) {
+    @include breakpoint(mediumScreen) {
         margin: 20px auto;
     }
 }

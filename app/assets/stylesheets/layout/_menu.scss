@@ -14,6 +14,9 @@ MENU
     @include breakpoint(largeScreen) {
         display: inline-block;
     }
+    @include breakpoint(smallScreen) {
+        margin-left: 30px;
+    } 
 }
 .menuIcon:hover, .menuIcon:focus {
     color: $lilac;
@@ -35,6 +38,14 @@ MENU
         transition: max-height 0.5s ease-out;
     }  
 }
+/* Remove scrollbar from menu on scroll */
+.menu::-webkit-scrollbar { 
+    width: 0 !important;
+}
+.menu {
+    -ms-overflow-style: none; 
+    overflow: -moz-scrollbars-none;
+}
 .menuIcon:hover + .menu, .menuIcon:focus + .menu, .menu:hover, .menu:focus {
 
     @include breakpoint(largeScreen) {
@@ -45,14 +56,6 @@ MENU
     @include breakpoint(shortScreen) {
         max-height: 120px;
     }    
-}
-/* Remove scrollbar from menu on scroll */
-.menu::-webkit-scrollbar { 
-    width: 0 !important;
-}
-.menu {
-    -ms-overflow-style: none; 
-    overflow: -moz-scrollbars-none;
 }
 
 /* LINKS */
