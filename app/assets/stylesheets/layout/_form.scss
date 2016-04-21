@@ -5,11 +5,7 @@ FORM
     width: 260px;
     margin: 20px auto;
     font-size: $normal;
-    text-transform: capitalize; 
-
-    @include breakpoint(xsmallScreen) {
-        width: $hundred;
-    }       
+    text-transform: capitalize;    
 }
 .field {
     margin: 10px 0;
