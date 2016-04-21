@@ -1,5 +1,29 @@
-<h1 class="mainHeading">Need Your Key?</h1>
+<h1 class="mainHeading"> <% if user_signed_in? %> Hello <%= current_user.email[/[^@]+/] %> | <% end %> Need Your Key?</h1>
 	<p class="mainText">Lost your key? We have a solution!!!</p>
+
+	<% if user_signed_in? %>
+
+		<div class="boxWrapper group">
+			<div class="box">
+				<h3 class="boxHeading">Keys</h3>
+					<i class="boxIcon fa fa-5x fa-key"></i>
+						<p class="boxText">Display a list of currently stored keys.</p>
+			</div>
+
+			<div class="box">
+				<h3 class="boxHeading">Add</h3>
+					<i class="boxIcon fa fa-5x fa-plus"></i>
+						<p class="boxText">Add a new key to your account.</p>
+			</div>
+
+			<div class="box">
+				<h3 class="boxHeading">Retreive</h3>
+					<i class="boxIcon fa fa-5x fa-exchange"></i>
+						<p class="boxText">Request a key retreival.</p>
+			</div>
+		</div>
+
+	<% else %>
 
 		<div class="boxWrapper group">
 			<div class="box">
@@ -20,3 +44,5 @@
 						<p class="boxText">Log in, retrieve any lost key and collect from our safe location.</p>
 			</div>
 		</div>
+
+	<% end %>

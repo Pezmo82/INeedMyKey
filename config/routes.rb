@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get "contact" => "static_pages#contact"
-  get "account" => "static_pages#account"
+  get "account" => "users#account"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
