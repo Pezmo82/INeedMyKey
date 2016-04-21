@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414182813) do
+ActiveRecord::Schema.define(version: 20160421172607) do
 
   create_table "addresses", force: :cascade do |t|
     t.text     "location",   limit: 65535
@@ -23,11 +23,17 @@ ActiveRecord::Schema.define(version: 20160414182813) do
     t.datetime "updated_at",               null: false
   end
 
+  create_table "contacts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "keys", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
     t.integer  "address_id", limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.text     "name",       limit: 65535
   end
 
   add_index "keys", ["address_id"], name: "index_keys_on_address_id", using: :btree

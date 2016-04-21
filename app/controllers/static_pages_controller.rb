@@ -1,9 +1,10 @@
 class StaticPagesController < ApplicationController
 
 	def contact
-  	end	
+  	end
 
   	def account
+
   	end
 
 end
