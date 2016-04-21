@@ -5,11 +5,7 @@ FORM
     width: 260px;
     margin: 20px auto;
     font-size: $normal;
-    text-transform: capitalize; 
-
-    @include breakpoint(xsmallScreen) {
-        width: $hundred;
-    }       
+    text-transform: capitalize;    
 }
 .field {
     margin: 10px 0;
@@ -36,17 +32,18 @@ FORM
     @include transition;    
 }
 .checkBox {
-    @include scale;
+    margin: 10px 10px 0 7px;
     @include box-shadow;
+    @include scale;
 }
 .button {
     background-color: $purpley;
-    color: $white;
+    color: $ghost;
     padding: 0 20px;
     margin: 10px auto 20px auto;
     border: 1px solid $storm;       
 }
-.formLink {
+.formLink, .formLink:active, .formLink:visited {
     cursor: pointer;
     margin-bottom: 5px;
     float: left;
@@ -54,7 +51,7 @@ FORM
     text-decoration: none;     
 }
 .input:focus, .input:hover {
-    border: 1px solid $storm;
+    border: 1px solid $purpley;
 }
 .input:focus, .input:hover, .button:focus, .button:hover {
     box-shadow: none;

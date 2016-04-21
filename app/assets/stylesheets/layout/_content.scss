@@ -13,7 +13,19 @@ CONTENT
 
     @include breakpoint(largeScreen) {
         width: $hundred;
-        max-height: 1000px;        
+        position: fixed;
+        min-height: 108px;
+        clear: both;
+        background-color: $purpley;
+        overflow: hidden;
+        border-bottom: 8px solid $lilac;
+    }
+}
+.innerSide {
+    overflow: auto;
+    
+    @include breakpoint(largeScreen) {
+       padding-right: 20px;  
     }
 }
 .contentWrapper {
@@ -24,19 +36,26 @@ CONTENT
     float: left;
     margin: 20px 20px 20px 0; 
     padding: 20px;
-    background-color: $white;
+    background-color: $ghost;
     @include border-radius(10px);
-    @include transition; 
 
     @include breakpoint(xlargeScreen) {
         width: calc(100% - 300px);
     } 
     @include breakpoint(largeScreen) {
         width: calc(100% - 40px); 
-        height: calc(100% - 140px); 
-        min-height: calc(100% - 140px);     
-        margin: 20px;  
-    }    
+        height: calc(100% - 148px); 
+        min-height: calc(100% - 148px);     
+        margin: 128px 20px 20px 20px; 
+
+    } 
+    @include breakpoint(smallScreen) {
+        width: $hundred;
+        height: calc(100% - 108px); 
+        min-height: calc(100% - 108px); 
+        @include border-radius(0);
+        margin: 108px 0 0 0;
+    }               
 }
 
 /********************
@@ -53,14 +72,13 @@ LOGO
     @include transition; 
 
     @include breakpoint(largeScreen) {
-        float: left;
-        margin-bottom: 0;
+        width: 195px;
+        height: 60px;
+        position: absolute;
+        margin: 0;
+        top: 20px;
+        right: 20px;
     }   
-    @include breakpoint(smallScreen) {
-        margin: 20px auto 10px auto;
-        float: none;
-        display: block;  
-    }  
 }
 .logo:hover {
     opacity: 0.3;
@@ -80,7 +98,7 @@ BOX
     margin: 0 0 -1000px 0;
     padding-bottom: 1000px;
     background-color: $purpley;
-    color: $white;
+    color: $ghost;
     text-align: center; 
     @include text-shadow;
     @include transition;               

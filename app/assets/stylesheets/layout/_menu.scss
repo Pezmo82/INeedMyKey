@@ -5,27 +5,22 @@ MENU
 /* MENU ICON */
 .menuIcon {
     display: none;
+    color: $ghost;
+    margin: 26px auto auto 50px;
+    cursor: pointer;
     @include text-shadow;
+    @include transition;
 
     @include breakpoint(largeScreen) {
-        display: block;
-        margin: 0 0 20px 25px;
-        color: $white;
-    } 
-    @include breakpoint(smallScreen) {
-        margin-left: 0;
-        text-align: center;   
-    }    
+        display: inline-block;
+    }
 }
-.fa-bars {
-
-    @include breakpoint(largeScreen) {
-        margin-left: 40px;
-        line-height: $xlarge; 
-    }
-    @include breakpoint(smallScreen) {
-        margin: 0 auto;
-    }
+.menuIcon:hover, .menuIcon:focus {
+    color: $lilac;
+}
+/* Force cursor to pointer when hovering over icon */ 
+[class^="menuIcon"]:before, [class*="menuIcon"]:before {
+    cursor: inherit;
 }
 
 /* MENU */
@@ -34,25 +29,30 @@ MENU
     
     @include breakpoint(largeScreen) {
         width: 300px;
-        float: left;
-        max-height: 40px;
-        margin: 40px 0 auto 0;
+        max-height: 0;
+        position: relative;
         overflow: hidden;
         transition: max-height 0.5s ease-out;
     }  
-    @include breakpoint(smallScreen) {
-        float: none;
-        display: block;
-        margin: 0 auto; 
-    }  
 }
-.menu:hover, .menu:focus {
+.menuIcon:hover + .menu, .menuIcon:focus + .menu, .menu:hover, .menu:focus {
 
     @include breakpoint(largeScreen) {
         max-height: 1000px;
+        overflow: auto;
         transition: max-height 0.5s ease-in;
-        overflow: visible;
     }
+    @include breakpoint(shortScreen) {
+        max-height: 120px;
+    }    
+}
+/* Remove scrollbar from menu on scroll */
+.menu::-webkit-scrollbar { 
+    width: 0 !important;
+}
+.menu {
+    -ms-overflow-style: none; 
+    overflow: -moz-scrollbars-none;
 }
 
 /* LINKS */
@@ -63,19 +63,22 @@ MENU
     padding: 10px 10%;
     font-size: $large;
     text-decoration: none;
-    color: $white;
-    border-bottom: 1px solid $white; 
+    color: $ghost;
+    border-bottom: 1px solid $ghost; 
     @include box-shadow; 
     @include transition; 
     @include text-shadow;
     cursor: pointer;       
 }
+.navLink:first-child {
+    margin-top: 20px;
+}
 .navLink:last-child {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .navLink:focus, .navLink:hover {
     width: 90%;
-    padding-left: 15%;
+    padding-left: 15%;    
     color: $lilac;
     border-bottom: 1px solid $lilac;   
 }
