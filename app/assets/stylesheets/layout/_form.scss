@@ -43,7 +43,7 @@ FORM
     margin: 10px auto 20px auto;
     border: 1px solid $storm;       
 }
-.formLink {
+.formLink, .formLink:active, .formLink:visited {
     cursor: pointer;
     margin-bottom: 5px;
     float: left;

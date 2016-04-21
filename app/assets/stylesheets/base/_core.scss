@@ -29,3 +29,7 @@ body {
     background-color: $purpley;
     color: $storm;    
 }
+a, a:active, a.visited {
+    color: $purpley;
+    text-decoration: none;
+}
