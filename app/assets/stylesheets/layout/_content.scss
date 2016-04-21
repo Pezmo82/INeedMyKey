@@ -13,7 +13,18 @@ CONTENT
 
     @include breakpoint(largeScreen) {
         width: $hundred;
-        max-height: 1000px;        
+        position: fixed;
+        min-height: 100px;
+        clear: both;
+        background-color: $purpley;
+        overflow: hidden;
+    }
+}
+.innerSide {
+    overflow: auto;
+    
+    @include breakpoint(largeScreen) {
+       padding-right: 20px;  
     }
 }
 .contentWrapper {
@@ -26,17 +37,17 @@ CONTENT
     padding: 20px;
     background-color: $white;
     @include border-radius(10px);
-    @include transition; 
 
     @include breakpoint(xlargeScreen) {
         width: calc(100% - 300px);
     } 
     @include breakpoint(largeScreen) {
         width: calc(100% - 40px); 
-        height: calc(100% - 140px); 
-        min-height: calc(100% - 140px);     
-        margin: 20px;  
-    }    
+        height: calc(100% - 120px); 
+        min-height: calc(100% - 120px);     
+        margin: 100px 20px 20px 20px; 
+
+    }           
 }
 
 /********************
@@ -53,14 +64,13 @@ LOGO
     @include transition; 
 
     @include breakpoint(largeScreen) {
-        float: left;
-        margin-bottom: 0;
+        width: 195px;
+        height: 60px;
+        position: absolute;
+        margin: 0;
+        top: 20px;
+        right: 20px;
     }   
-    @include breakpoint(smallScreen) {
-        margin: 20px auto 10px auto;
-        float: none;
-        display: block;  
-    }  
 }
 .logo:hover {
     opacity: 0.3;

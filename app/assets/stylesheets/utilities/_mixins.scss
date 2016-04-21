@@ -1,5 +1,6 @@
 /* BREAKPOINTS */
 @mixin breakpoint($point) {
+    /* WIDTHS */
     @if $point == xlargeScreen {
         @media (max-width: 1400px) { @content; }
     }
@@ -14,6 +15,10 @@
     }
     @else if $point == xsmallScreen {
         @media (max-width: 400px) { @content; }
+    }
+    /* HEIGHTS */
+    @else if $point == shortScreen {
+        @media (max-height: 500px) { @content; }
     }
 }
 
