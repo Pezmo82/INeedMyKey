@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
   validates :email, confirmation: true
   validates :mobile_number, confirmation: true, presence: true
 
+  has_many :keys
+
 end

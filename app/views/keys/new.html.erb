@@ -2,7 +2,7 @@
     <hr class="faded" />
 
 <div class="formWrapper">
-    <%= form_for :key, url: user_keys do |f| %>
+    <%= form_for @key do |f| %>
         <div class="field">
             <%= f.label :name, class: "label" %><br />
             <%= f.text_field :name, autofocus: true, required: true, class: "input" %>

@@ -13,7 +13,7 @@ class KeysController < ApplicationController
 
   def create
 
-    @key = Key.new(key_params)
+    @key = current_user.keys.new(key_params)
 
     if @key.save
       flash[:notice] = 'Key added successfully'
