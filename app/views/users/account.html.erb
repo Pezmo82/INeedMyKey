@@ -1,0 +1,27 @@
+<h1 class="mainHeading">Account</h1>
+<p>All account stuff</p>
+
+<div class="boxWrapper group">
+
+	<%= link_to user_password_path(email: current_user.email), method: :post do %>
+
+		<div class="box">
+			<h3 class="boxHeading">Change Password</h3>
+				<i class="boxIcon fa fa-5x fa-asterisk"></i>
+					<p class="boxText">Send password change instructions to your email.</p>
+		</div>
+
+	<% end %>
+
+	<div class="box">
+		<h3 class="boxHeading">Add</h3>
+			<i class="boxIcon fa fa-5x fa-plus"></i>
+				<p class="boxText">Add a new key to your account.</p>
+	</div>
+
+	<div class="box">
+		<h3 class="boxHeading">Retreive</h3>
+			<i class="boxIcon fa fa-5x fa-exchange"></i>
+				<p class="boxText">Request a key retreival.</p>
+	</div>
+</div>
