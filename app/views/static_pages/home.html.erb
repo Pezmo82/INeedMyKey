@@ -1,24 +1,50 @@
-<h1 class="mainHeading">I Need My Key!!!</h1>
+<h1 class="mainHeading"> <% if user_signed_in? %> Hello <%= current_user.email[/[^@]+/] %> | <% end %> Need Your Key?</h1>
 	<hr class="faded" />
 		<p class="mainText">Fed up of losing your keys and not having access to a spare? We have a solution!</p>
 		<p class="mainText">Follow our simple three stage process and never worry about this again.</p>
 
-<div class="boxWrapper group">
-	<div class="box">
-		<h3 class="boxHeading">Sign Up</h3>
-			<i class="boxIcon fa fa-5x fa-pencil-square-o"></i>
-				<p class="boxText">Sign up and log in to your account.</p>
-	</div>
+	<% if user_signed_in? %>
 
-	<div class="box">
-		<h3 class="boxHeading">Add</h3>
-			<i class="boxIcon fa fa-5x fa-plus"></i>
-				<p class="boxText">Add as many keys as you need to your account and deliver to our safe location.</p>
-	</div>
+		<div class="boxWrapper group">
+			<div class="box">
+				<h3 class="boxHeading">Keys</h3>
+					<i class="boxIcon fa fa-5x fa-key"></i>
+						<p class="boxText">Display a list of currently stored keys.</p>
+			</div>
 
-	<div class="box">
-		<h3 class="boxHeading">Retreive</h3>
-			<i class="boxIcon fa fa-5x fa-exchange"></i>
-				<p class="boxText">Log in, retrieve any lost key and collect from our safe location.</p>
-	</div>
-</div>
+			<div class="box">
+				<h3 class="boxHeading">Add</h3>
+					<i class="boxIcon fa fa-5x fa-plus"></i>
+						<p class="boxText">Add a new key to your account.</p>
+			</div>
+
+			<div class="box">
+				<h3 class="boxHeading">Retreive</h3>
+					<i class="boxIcon fa fa-5x fa-exchange"></i>
+						<p class="boxText">Request a key retreival.</p>
+			</div>
+		</div>
+
+	<% else %>
+
+		<div class="boxWrapper group">
+			<div class="box">
+				<h3 class="boxHeading">Sign Up</h3>
+					<i class="boxIcon fa fa-5x fa-pencil-square-o"></i>
+						<p class="boxText">Sign up and log in to your account.</p>
+			</div>
+
+			<div class="box">
+				<h3 class="boxHeading">Add</h3>
+					<i class="boxIcon fa fa-5x fa-plus"></i>
+						<p class="boxText">Add as many keys as you need to your account and deliver to our safe location.</p>
+			</div>
+
+			<div class="box">
+				<h3 class="boxHeading">Retreive</h3>
+					<i class="boxIcon fa fa-5x fa-exchange"></i>
+						<p class="boxText">Log in, retrieve any lost key and collect from our safe location.</p>
+			</div>
+		</div>
+
+	<% end %>
