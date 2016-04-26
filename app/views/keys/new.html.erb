@@ -1,0 +1,16 @@
+<h1 class="mainHeading">New Key</h1>
+    <hr class="faded" />
+
+<div class="formWrapper">
+    <%= form_for :key, url: user_keys do |f| %>
+        <div class="field">
+            <%= f.label :name, class: "label" %><br />
+            <%= f.text_field :name, autofocus: true, required: true, class: "input" %>
+        </div>
+
+        <div class="actions">
+            <%= f.button "Add Key", type: :submit, class: "button" %>
+        </div>
+    <% end %>
+
+</div>
