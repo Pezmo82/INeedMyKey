@@ -22,7 +22,7 @@ MENU
     color: $lilac;
 }
 /* Force cursor to pointer when hovering over icon */ 
-[class^="menuIcon"]:before, [class*="menuIcon"]:before {
+[class^="fa"]:before, [class*="fa"]:before {
     cursor: inherit;
 }
 

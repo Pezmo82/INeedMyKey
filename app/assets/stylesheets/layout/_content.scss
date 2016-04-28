@@ -98,6 +98,7 @@ BOX
 }
 .box {
     width: calc(100% / 3 - 14px);
+    display: block;
     float: left;
     margin: 0 0 -1000px 0;
     padding-bottom: 1000px;
@@ -134,4 +135,9 @@ BOX
 }
 .boxText {
     font-size: $small;
+}
+.boxLink {
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
 }
