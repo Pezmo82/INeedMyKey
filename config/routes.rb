@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [] do
 
   end
-  
+
   resources :keys, only: [:new, :create, :delete, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get "contact" => "static_pages#contact"
   get "account" => "users#account"
+
+  get "admin/users/show" => "admin/users#show"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
