@@ -33,9 +33,12 @@
 				</tr>
 
 				<% current_user.keys.each do | key | %>
+
 				<tr>
 					<td class="keyValue"><%= key.name %></td>
 					<td class="keyValue"><%= key.created_at %></td>
+					<td><%= key.name %></td>
+					<td><%= key.created_at.strftime("%d %b %Y %H:%M") %></td>
 					 <% if key.created_at == key.updated_at %>
 					 	<td class="keyValue">N/A</td>
 					 <% else %>
@@ -43,6 +46,7 @@
 					 <% end %>
 				</tr>
 				<% end %>
+
 			</table>
 
 	<% else %>
