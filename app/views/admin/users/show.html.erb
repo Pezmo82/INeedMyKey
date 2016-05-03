@@ -1,0 +1,31 @@
+<div>
+
+  <table>
+
+    <tr>
+
+      <th>User ID</th>
+
+      <th>Email</th>
+
+      <th>Rank</th>
+
+    </tr>
+
+    <%= for user in @users do %>
+
+      <tr>
+
+        <td>user.id</td>
+
+        <td>user.email</td>
+
+        <td>user.rank_id.name</td>
+
+      </tr>
+
+    <% end %>
+
+  </table>
+
+</div>
