@@ -25,6 +25,26 @@
 			<% end %>
 		</div>
 
+			<table>
+				<tr>
+					<th>Key Name</th>
+					<th>Key First Stored</th>		
+					<th>Key Last Retrieved</th>
+				</tr>
+
+				<% current_user.keys.each do | key | %>
+				<tr>
+					<td><%= key.name %></td>
+					<td><%= key.created_at %></td>
+					 <% if key.created_at == key.updated_at %>
+					 	<td>Never</td>
+					 <% else %>
+					 	<td><%= key.updated_at %></td>
+					 <% end %>
+				</tr>
+				<% end %>
+			</table>
+
 	<% else %>
 
 		<div class="boxWrapper group">
