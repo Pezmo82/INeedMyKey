@@ -8,19 +8,23 @@
 
       <th>Email</th>
 
+      <th>Mobile Number</th>
+
       <th>Rank</th>
 
     </tr>
 
-    <%= for user in @users do %>
+    <% @Users.each do | user | %>
 
       <tr>
 
-        <td>user.id</td>
+        <td><%= user.id %></td>
 
-        <td>user.email</td>
+        <td><%= user.email %></td>
 
-        <td>user.rank_id.name</td>
+        <td> <%= user.mobile_number %> </td>
+
+        <td><%= user.rank_id %></td>
 
       </tr>
 
