@@ -5,8 +5,10 @@ Rails.application.routes.draw do
 
   end
   
-  resources :keys, only: [:new, :create, :delete, :show]
+  resources :keys, only: [:new, :create, :delete, :show] 
 
+  resources :comments, only: [:new, :create, :delete, :show]
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
