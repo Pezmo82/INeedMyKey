@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :users, only: [] do
-
-  end
 
   resources :keys, only: [:new, :create, :delete, :show]
 
@@ -17,6 +14,7 @@ Rails.application.routes.draw do
   get "account" => "users#account"
 
   get "admin/users/show" => "admin/users#show"
+  get "admin/locations/add" => "admin/locations#add"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

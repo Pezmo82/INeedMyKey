@@ -9,16 +9,4 @@ class AdminController < ApplicationController
 
   end
 
-  private
-
-  def check_rank
-
-    if current_user.rank_id < 1
-
-      redirect_to root_path
-
-    end
-
-  end
-
 end
