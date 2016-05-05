@@ -1,0 +1,47 @@
+<div>
+
+  <table>
+
+    <tr>
+
+      <th>Location ID</th>
+
+      <th>Name</th>
+
+      <th>Address Line 1</th>
+
+      <th>Address Line 2</th>
+
+      <th>Parish</th>
+
+      <th>Postcode</th>
+
+      <th>Capacity</th>
+
+    </tr>
+
+    <% @Locations.each do | location | %>
+
+      <tr>
+
+        <td> <%= location.id %> </td>
+
+        <td> <%= location.name %> </td>
+
+        <td> <%= location.address_line_1 %> </td>
+
+        <td> <%= location.address_line_2 %> </td>
+
+        <td> <%= location.parish %> </td>
+
+        <td> <%= location.post_code %> </td>
+
+        <td> <%= location.capacity %> </td>
+
+      </tr>
+
+    <% end %>
+
+  </table>
+
+</div>

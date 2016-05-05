@@ -3,7 +3,7 @@ class Admin::LocationsController < ApplicationController
   before_action :authenticate_user!
   before_action :check_rank
 
-  def show
+  def index
 
     @Locations = Location.all
 
@@ -39,7 +39,7 @@ class Admin::LocationsController < ApplicationController
 
   def location_params
 
-    params.require(:location).permit(:name, :address_line1, :address_line2, :parish, :post_code, :capacity)
+    params.require(:location).permit(:name, :address_line_1, :address_line_2, :parish, :post_code, :capacity)
 
   end
 
