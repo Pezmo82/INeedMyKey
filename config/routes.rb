@@ -4,6 +4,14 @@ Rails.application.routes.draw do
 
   resources :keys, only: [:new, :create, :delete, :show]
 
+  namespace :admin do
+
+    resources :users, only: [:index]
+
+    resources :locations, only: [:new, :create, :show]
+
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -12,9 +20,6 @@ Rails.application.routes.draw do
 
   get "contact" => "static_pages#contact"
   get "account" => "users#account"
-
-  get "admin/users/show" => "admin/users#show"
-  get "admin/locations/add" => "admin/locations#add"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

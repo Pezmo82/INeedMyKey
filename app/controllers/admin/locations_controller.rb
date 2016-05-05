@@ -1,8 +1,13 @@
 class Admin::LocationsController < ApplicationController
 
-
   before_action :authenticate_user!
   before_action :check_rank
+
+  def show
+
+    @Locations = Location.all
+
+  end
 
   def new
 
@@ -11,11 +16,18 @@ class Admin::LocationsController < ApplicationController
   end
 
   def create
-    @location = Location.new(params[:location])
+
+    @location = Location.new(location_params)
+
+    if @location.save
+
       flash[:notice] = "Location lodged."
-      redirect_to location_path
+      redirect_to root_path
+
     else
-      render :action => 'new'
+
+      render :new
+
     end
   end
 
@@ -23,7 +35,12 @@ class Admin::LocationsController < ApplicationController
 
 	end
 
-	def show
+  private
+
+  def location_params
+
+    params.require(:location).permit(:name, :address_line1, :address_line2, :parish, :post_code, :capacity)
+
   end
 
 end
