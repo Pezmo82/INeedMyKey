@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     if @comment.valid?
       # TODO send message here
       flash[:notice] = "Message sent! Thank you for contacting us."
-      redirect_to root_url
+      redirect_to comments_path
     else
       render :action => 'new'
     end

@@ -61,6 +61,11 @@ FORM
     @include transition;
 }
 
+.textArea {
+    height: 100px;
+    text-align: left;
+}
+
 /********************
 ERRORS
 ********************/

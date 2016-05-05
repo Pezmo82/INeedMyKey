@@ -9,13 +9,11 @@
 				<p class="boxText">Jersey: 01534 012 012 &amp; UK: 0207 732 4130</p>
 	</div>
 
-	<div class="box">
+	<%= link_to new_comment_path, :class => "box" do %>
 		<h3 class="boxHeading">Email</h3>
-		<%= link_to new_comment_path, :class => "box" do %>
 			<i class="boxIcon fa fa-5x fa-envelope"></i>
 				<p class="boxText">Click here</p>
 		<% end %>
-	</div>
 
 	<div class="box">
 			<h3 class="boxHeading">Like us</h3>

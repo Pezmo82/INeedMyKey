@@ -3,11 +3,11 @@ class Comment
   include ActiveModel::Conversion
   extend ActiveModel::Naming
   
-  attr_accessor :name, :email, :content
+  attr_accessor :name, :email, :comment
  
   validates_presence_of :name
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
-  validates_length_of :content, :maximum => 500
+  validates_length_of :comment, :maximum => 500
   
   def initialize(attributes = {})
     attributes.each do |name, value|
