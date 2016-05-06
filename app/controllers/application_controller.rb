@@ -20,6 +20,12 @@ class ApplicationController < ActionController::Base
 
       redirect_to root_path
 
+      return false
+
+    else
+
+      return true
+
     end
 
   end
