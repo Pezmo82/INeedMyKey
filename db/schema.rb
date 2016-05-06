@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506151103) do
+ActiveRecord::Schema.define(version: 20160506155041) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "location",   limit: 30, null: false
@@ -24,14 +24,13 @@ ActiveRecord::Schema.define(version: 20160506151103) do
   end
 
   create_table "keys", force: :cascade do |t|
-    t.string   "name",       limit: 50, null: false
-    t.integer  "user_id",    limit: 4,  null: false
-    t.integer  "address_id", limit: 4
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.string   "name",       limit: 50,  null: false
+    t.integer  "user_id",    limit: 4,   null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "auth_code",  limit: 255
   end
 
-  add_index "keys", ["address_id"], name: "index_keys_on_address_id", using: :btree
   add_index "keys", ["user_id"], name: "index_keys_on_user_id", using: :btree
 
   create_table "locations", force: :cascade do |t|
@@ -54,10 +53,10 @@ ActiveRecord::Schema.define(version: 20160506151103) do
   add_index "ranks", ["name"], name: "name", unique: true, using: :btree
 
   create_table "storages", force: :cascade do |t|
-    t.integer  "key_id",      limit: 4
-    t.integer  "location_id", limit: 4
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.integer  "key_id",       limit: 4
+    t.integer  "location_id",  limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "storages", ["key_id"], name: "index_storages_on_key_id", using: :btree
@@ -85,7 +84,6 @@ ActiveRecord::Schema.define(version: 20160506151103) do
   add_index "users", ["rank_id"], name: "index_users_on_rank_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "keys", "addresses"
   add_foreign_key "keys", "users"
   add_foreign_key "storages", "keys"
   add_foreign_key "storages", "locations"
