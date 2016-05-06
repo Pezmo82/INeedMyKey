@@ -14,4 +14,20 @@ class ApplicationController < ActionController::Base
 
   end
 
+  def check_rank
+
+    if current_user.rank_id < 1
+
+      redirect_to root_path
+
+      return false
+
+    else
+
+      return true
+
+    end
+
+  end
+
 end

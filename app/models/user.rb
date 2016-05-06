@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
 
   has_many :keys
 
+  belongs_to :rank
+
 end

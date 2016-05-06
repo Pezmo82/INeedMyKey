@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160428174708) do
+ActiveRecord::Schema.define(version: 20160505173328) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "location",   limit: 30, null: false
@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(version: 20160428174708) do
 
   add_index "keys", ["address_id"], name: "index_keys_on_address_id", using: :btree
   add_index "keys", ["user_id"], name: "index_keys_on_user_id", using: :btree
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "name",           limit: 255
+    t.string   "address_line_1", limit: 255
+    t.string   "address_line_2", limit: 255
+    t.string   "parish",         limit: 255
+    t.string   "post_code",      limit: 255
+    t.integer  "capacity",       limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
 
   create_table "ranks", force: :cascade do |t|
     t.string   "name",       limit: 20, null: false
@@ -57,7 +68,7 @@ ActiveRecord::Schema.define(version: 20160428174708) do
     t.datetime "updated_at",                                      null: false
     t.string   "registered_ip_address",  limit: 15,               null: false
     t.string   "mobile_number",          limit: 25,               null: false
-    t.integer  "rank_id",                limit: 4
+    t.integer  "rank_id",                limit: 4,   default: 0,  null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -66,5 +77,4 @@ ActiveRecord::Schema.define(version: 20160428174708) do
 
   add_foreign_key "keys", "addresses"
   add_foreign_key "keys", "users"
-  add_foreign_key "users", "ranks"
 end
