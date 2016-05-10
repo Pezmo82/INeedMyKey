@@ -4,13 +4,14 @@
 <div class="formWrapper">
     <%= form_for @key do |f| %>
         <div class="field">
-            <%= f.label :name, class: "label" %><br />
-            <%= f.text_field :name, autofocus: true, required: true, class: "input" %>
+            <%= f.label :name, class: :label %><br />
+                <%= f.text_field :name, autofocus: true, required: true, class: :input %>
         </div>
 
         <div class="actions">
-            <%= f.button "Add Key", type: :submit, class: "button" %>
+            <%= f.button "Add Key", type: :submit, class: :button %>
         </div>
     <% end %>
 
+    <%= link_to "Back", :back, class: :formLink %>
 </div>

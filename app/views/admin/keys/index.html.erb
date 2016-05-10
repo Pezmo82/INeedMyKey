@@ -1,35 +1,21 @@
-<div>
+<h1 class="mainHeading">Current Keys</h1>
+    <hr class="faded" />
 
-  <table>
+        <%= link_to "Back", :back, class: :formLink %>
 
-    <tr>
-
-      <th>Key ID</th>
-
-      <th>Key Name</th>
-
-      <th>User ID</th>
-
-      <th>User Email</th>
-
-    </tr>
-
+<table class="table">
+        <tr>
+            <th class="tableHeading">Key ID</th>
+            <th class="tableHeading">Key Name</th>
+            <th class="tableHeading">User ID</th>
+            <th class="tableHeading">User Email</th>
+        </tr>
     <% @Keys.each do | key | %>
-
-      <tr>
-
-        <td><%= key.id %></td>
-
-        <td> <%= key.name %> </td>
-
-        <td> <%= key.user_id %> </td>
-
-        <td> <%= key.user.email %> </td>
-
-      </tr>
-
+        <tr>
+            <td class="tableValue"><%= key.id %></td>
+            <td class="tableValue"><%= key.name %></td>
+            <td class="tableValue"><%= key.user_id %></td>
+            <td class="tableValue"><%= key.user.email %></td>
+        </tr>
     <% end %>
-
-  </table>
-
-</div>
+</table>

@@ -1,35 +1,21 @@
-<div>
+<h1 class="mainHeading">Current Users</h1>
+    <hr class="faded" />
 
-  <table>
+        <%= link_to "Back", :back, class: :formLink %>
 
-    <tr>
-
-      <th>User ID</th>
-
-      <th>Email</th>
-
-      <th>Mobile Number</th>
-
-      <th>Rank</th>
-
-    </tr>
-
+<table class="table">
+        <tr>
+            <th class="tableHeading">User ID</th>
+            <th class="tableHeading">Email</th>
+            <th class="tableHeading">Mobile Number</th>
+            <th class="tableHeading">Rank</th>
+        </tr>
     <% @Users.each do | user | %>
-
-      <tr>
-
-        <td><%= user.id %></td>
-
-        <td><%= user.email %></td>
-
-        <td> <%= user.mobile_number %> </td>
-
-        <td><%= user.rank_id %></td>
-
-      </tr>
-
+        <tr>
+            <td class="tableValue"><%= user.id %></td>
+            <td class="tableValue"><%= user.email %></td>
+            <td class="tableValue"><%= user.mobile_number %></td>
+            <td class="tableValue"><%= user.rank_id %></td>
+        </tr>
     <% end %>
-
-  </table>
-
-</div>
+</table>

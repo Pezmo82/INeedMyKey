@@ -4,27 +4,27 @@
 <div class="formWrapper">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
-            <%= f.label :email, class: "label" %><br />
-            <%= f.email_field :email, autofocus: true, required: true, class: "input" %>
+            <%= f.label :email, class: :label %><br />
+                <%= f.email_field :email, autofocus: true, required: true, class: :input %>
         </div>
 
         <div class="field">
-            <%= f.label :password, class: "label" %><br />
-            <%= f.password_field :password, autocomplete: "off", required: true, class: "input" %>
+            <%= f.label :password, class: :label %><br />
+                <%= f.password_field :password, autocomplete: "off", required: true, class: :input %>
         </div>
 
             <% if devise_mapping.rememberable? -%>
                 <div class="field">
-                    <%= f.check_box :remember_me, class: "userInput checkBox" %>
-                    <%= f.label :remember_me, class: "label" %>
+                    <%= f.check_box :remember_me, class: [:userInput, :checkBox] %>
+                        <%= f.label :remember_me, class: :label %>
                 </div>
             <% end -%>
 
         <div class="actions">
-            <%= f.button "Log In", type: :submit, class: "button" %>
+            <%= f.button "Log In", type: :submit, class: :button %>
         </div>
     <% end %>
 
     <%= render "devise/shared/links" %>
-
+    <%= link_to "Back", :back, class: :formLink %>
 </div>

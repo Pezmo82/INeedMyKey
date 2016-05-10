@@ -6,14 +6,15 @@
 	  	<%= devise_error_messages! %>
 
 	  	<div class="field">
-	    	<%= f.label :email, class: "label" %><br />
-	    	<%= f.email_field :email, autofocus: true, required: true, class: "input" %>
+	    	<%= f.label :email, class: :label %><br />
+	    		<%= f.email_field :email, autofocus: true, required: true, class: :input %>
 	  	</div>
 
 	  	<div class="actions">
-	    	<%= f.button "Send Reset Info", type: :submit, class: "button" %>
+	    	<%= f.button "Send Reset Info", type: :submit, class: :button %>
 	  	</div>
 	<% end %>
 
 	<%= render "devise/shared/links" %>
+	<%= link_to "Back", :back, class: :formLink %>
 </div>

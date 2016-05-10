@@ -7,16 +7,16 @@
 			<i class="boxIcon fa fa-5x fa-phone"></i>
 				<p class="boxText">Jersey: 01534 012 012 &amp; UK: 0207 732 4130</p>
 	</div>
-
-	<%= link_to new_comment_path, :class => "box" do %>
+	
+	<%= link_to new_comment_path, class: [:box, :boxLink] do %>
 		<h3 class="boxHeading">Email</h3>
 			<i class="boxIcon fa fa-5x fa-envelope"></i>
 				<p class="boxText">Click here</p>
-		<% end %>
+	<% end %>
 
 	<div class="box">
-			<h3 class="boxHeading">Like us</h3>
-				<i class="boxIcon fa fa-5x fa-facebook"></i>
-					<p class="boxText">Follow us via social media</p>
+		<h3 class="boxHeading">Like us</h3>
+			<i class="boxIcon fa fa-5x fa-facebook"></i>
+				<p class="boxText">Follow us via social media</p>
 	</div>
 </div>

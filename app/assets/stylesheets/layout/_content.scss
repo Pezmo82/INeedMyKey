@@ -100,6 +100,8 @@ BOX
     width: calc(100% / 3 - 14px);
     display: block;
     float: left;
+/*width: 32%;
+display: inline-block;*/
     margin: 0 0 -1000px 0;
     padding-bottom: 1000px;
     background-color: $purpley;
@@ -108,6 +110,9 @@ BOX
     @include text-shadow;
     @include transition;            
 }
+/*.box:last-child {
+    margin-right: 0;
+}*/
 .box, .box:nth-child(2) {
     @include breakpoint(mediumScreen) {
         float: none;
@@ -140,4 +145,7 @@ BOX
     display: block;
     cursor: pointer;
     text-decoration: none;
+}
+.boxLink:hover, .boxIcon:focus {
+    opacity: 0.8;    
 }

@@ -1,21 +1,28 @@
 /********************
 TABLE
 ********************/
-.viewKeys {
+.table {
     width: $hundred;
     margin: 40px 0
 }
-.keyHeading, .keyValue {
-    width: calc(100% / 3);
+.tableHeading, .tableValue {
     margin: 0;
     padding: 0;
     font-size: $normal;
     text-align: left; 
 }
-.keyHeading {
+.tableHeading {
     border-bottom: 2px solid $purpley;
     color: $purpley;
 }
-.keyValue {
+.tableValue {
     color: $storm;
+}
+
+.tableIcon {
+    color: $storm;
+    @include transition;      
+}
+.tableIcon:hover, .tableIcon:focus {
+    opacity: 0.8;
 }

@@ -1,29 +1,24 @@
+<h1 class="mainHeading">Administration</h1>
+    <hr class="faded" />
+
 <div class="boxWrapper group">
 
-  <%= link_to admin_users_path, class: :box do %>
+    <%= link_to admin_users_path, class: [:box, :boxLink] do %>
+        <h3 class="boxHeading">Users</h3>
+            <i class="boxIcon fa fa-5x fa-user"></i>
+                <p class="boxText">Display a list of all users registered on the system.</p>
+    <% end %>
 
-    <h3 class="boxHeading">Users</h3>
+    <%= link_to admin_keys_path, class: [:box, :boxLink] do %>
+        <h3 class="boxHeading">Keys</h3>
+            <i class="boxIcon fa fa-5x fa-key"></i>
+                <p class="boxText">Display a list of all keys and their associated users.</p>
+    <% end %>
 
-    <i class="boxIcon fa fa-5x fa-exchange"></i>
-
-    <p class="boxText">Display a list of all users registered on the system.</p>
-
-  <% end %>
-
-  <%= link_to admin_keys_path, class: :box do %>
-
-    <h3 class="boxHeading">Keys</h3>
-    <i class="boxIcon fa fa-5x fa-key"></i>
-    <p class="boxText">Display a list of all keys and their associated users.</p>
-
-  <% end %>
-
-  <%= link_to admin_locations_path, class: :box do %>
-
-    <h3 class="boxHeading">Locations</h3>
-      <i class="boxIcon fa fa-5x fa-plus"></i>
-        <p class="boxText">Display a list of all locations and their capacities.</p>
-
-  <% end %>
+    <%= link_to admin_locations_path, class: [:box, :boxLink] do %>
+        <h3 class="boxHeading">Locations</h3>
+            <i class="boxIcon fa fa-5x fa-map-marker"></i>
+                <p class="boxText">Display a list of all locations and their capacities.</p>
+    <% end %>
 
 </div>
