@@ -146,6 +146,6 @@ display: inline-block;*/
     cursor: pointer;
     text-decoration: none;
 }
-.boxLink:hover {
+.boxLink:hover, .boxIcon:focus {
     opacity: 0.8;
 }
