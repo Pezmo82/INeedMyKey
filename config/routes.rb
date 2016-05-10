@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :keys, only: [:new, :create, :delete, :show]
+  resources :keys, only: [:new, :create, :destroy, :show]
 
-  resources :comments, only: [:new, :create, :delete, :show]
+  resources :comments, only: [:new, :create, :destroy, :show]
 
   resources :admin, only: [:index]
 
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
     resources :keys, only: [:index]
 
-    resources :locations, only: [:new, :create, :index]
+    resources :locations, only: [:new, :create, :index, :destroy, :update]
 
   end
 
