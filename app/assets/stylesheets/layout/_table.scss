@@ -4,6 +4,7 @@ TABLE
 .table {
     width: $hundred;
     margin: 40px 0;
+    table-layout: fixed;   
 }
 .tableHeading, .tableValue {
     margin: 0;
@@ -11,13 +12,16 @@ TABLE
     font-size: $normal;
     text-align: left;
     vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;    
 }
 .tableHeading {
     border-bottom: 2px solid $purpley;
     color: $purpley;
 }
 .tableValue {
-    border-bottom: 2px solid $cloud;
+    border-bottom: 2px solid $cloud; 
 }
 
 .tableIcon {
