@@ -3,19 +3,22 @@ TABLE
 ********************/
 .viewKeys {
     width: $hundred;
-    margin: 40px 0
+    margin: 40px 0;
+    border-collapse: collapse;
 }
 .keyHeading, .keyValue {
-    width: calc(100% / 3);
-    margin: 0;
-    padding: 0;
+    width: 32%;
+    margin: 0 1% 0 0;
     font-size: $normal;
     text-align: left; 
 }
 .keyHeading {
-    border-bottom: 2px solid $purpley;
     color: $purpley;
+    border-bottom: 2px solid $purpley;
 }
 .keyValue {
     color: $storm;
+}
+.keyHeading:last-child, .keyValue:last-child {
+    margin-right: 0;
 }
