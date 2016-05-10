@@ -11,26 +11,26 @@
 
 <br>
 
-<table>
+<table class="table">
         <tr>
-            <th>Location ID</th>
-            <th>Name</th>
-            <th>Address Line 1</th>
-            <th>Address Line 2</th>
-            <th>Parish</th>
-            <th>Postcode</th>
-            <th>Capacity</th>
+            <th class="tableHeading">Location ID</th>
+            <th class="tableHeading">Name</th>
+            <th class="tableHeading">Address Line 1</th>
+            <th class="tableHeading">Address Line 2</th>
+            <th class="tableHeading">Parish</th>
+            <th class="tableHeading">Postcode</th>
+            <th class="tableHeading">Capacity</th>
         </tr>
     <% @Locations.each do | location | %>
         <tr>
-            <td><%= location.id %></td>
-            <td><%= location.name %></td>
-            <td><%= location.address_line_1 %></td>
-            <td><%= location.address_line_2 %></td>
-            <td><%= location.parish %></td>
-            <td><%= location.post_code %></td>
-            <td><%= location.capacity %></td>
-            <td><%= link_to new_admin_location_path do %>
+            <td class="tableValue"><%= location.id %></td>
+            <td class="tableValue"><%= location.name %></td>
+            <td class="tableValue"><%= location.address_line_1 %></td>
+            <td class="tableValue"><%= location.address_line_2 %></td>
+            <td class="tableValue"><%= location.parish %></td>
+            <td class="tableValue"><%= location.post_code %></td>
+            <td class="tableValue"><%= location.capacity %></td>
+            <td class="tableValue"><%= link_to new_admin_location_path do %>
                     <i class="tableIcon fa fa-2x fa-wrench"></i>
                 <% end %>
             </td>

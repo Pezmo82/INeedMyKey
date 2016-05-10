@@ -25,20 +25,20 @@
 			<% end %>
 		</div>
 
-			<table class="viewKeys">
+			<table class="table">
 					<tr>
-						<th class="keyHeading">Key Name</th>
-						<th class="keyHeading">Key Added</th>		
-						<th class="keyHeading">Key Last Retrieved</th>
+						<th class="tableHeading">Key Name</th>
+						<th class="tableHeading">Key Added</th>		
+						<th class="tableHeading">Key Last Retrieved</th>
 					</tr>
 				<% current_user.keys.each do | key | %>
 					<tr>
 						<td><%= key.name %></td>
 						<td><%= key.created_at.strftime("%d %b %Y - %H:%M") %></td>
 							<% if key.created_at == key.updated_at %>
-						 		<td class="keyValue">N/A</td>
+						 		<td class="tableValue">N/A</td>
 							<% else %>
-								<td class="keyValue"><%= key.updated_at %></td>
+								<td class="tableValue"><%= key.updated_at %></td>
 							<% end %>
 					</tr>
 				<% end %>
