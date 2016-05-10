@@ -35,11 +35,11 @@
 					<tr>
 						<td><%= key.name %></td>
 						<td><%= key.created_at.strftime("%d %b %Y - %H:%M") %></td>
-						 <% if key.created_at == key.updated_at %>
-						 	<td class="keyValue">N/A</td>
-						 <% else %>
-						 	<td class="keyValue"><%= key.updated_at %></td>
-						 <% end %>
+							<% if key.created_at == key.updated_at %>
+						 		<td class="keyValue">N/A</td>
+							<% else %>
+								<td class="keyValue"><%= key.updated_at %></td>
+							<% end %>
 					</tr>
 				<% end %>
 			</table>
