@@ -3,20 +3,21 @@ TABLE
 ********************/
 .table {
     width: $hundred;
-    margin: 40px 0
+    margin: 40px 0;
 }
 .tableHeading, .tableValue {
     margin: 0;
     padding: 0;
     font-size: $normal;
-    text-align: left; 
+    text-align: left;
+    vertical-align: top;
 }
 .tableHeading {
     border-bottom: 2px solid $purpley;
     color: $purpley;
 }
 .tableValue {
-    color: $storm;
+    border-bottom: 2px solid $cloud;
 }
 
 .tableIcon {
