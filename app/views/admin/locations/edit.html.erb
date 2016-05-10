@@ -1,0 +1,40 @@
+<h1 class="mainHeading">Edit Locations</h1>
+    <hr class="faded" />
+
+<div class="formWrapper">
+    <%= form_for [:admin, @location] do |f| %>
+        <div class="field">
+            <%= f.label :name, class: :label %><br />
+                <%= f.text_field :name, autofocus: true, required: true, class: :input %>
+        </div>
+
+        <div class="field">
+            <%= f.label :address_line_1, class: :label %><br />
+                <%= f.text_field :address_line_1, required: true, class: :input %>
+        </div>
+
+        <div class="field"> 
+            <%= f.label :address_line_2, class: :label %><br />
+                <%= f.text_field :address_line_2, required: true, class: :input %>
+        </div>
+
+        <div class="field">
+            <%= f.label :parish, class: :label %><br />
+                <%= f.text_field :parish, class: :input %>
+        </div>
+
+        <div class="field">
+            <%= f.label :post_code, class: :label %><br />
+                <%= f.text_field :post_code, required: true, class: :input %>
+        </div>
+
+        <div class="field">   
+            <%= f.label :capacity, class: :label %><br />
+                <%= f.text_field :capacity, required: true, class: :input %>
+         </div>
+
+        <div class="actions">
+            <%= f.button "Add Location", type: :submit, class: :button %>
+        </div>
+    <% end %>
+</div>
