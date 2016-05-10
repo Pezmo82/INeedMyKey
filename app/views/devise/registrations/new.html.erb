@@ -9,43 +9,44 @@
         </div>
 
         <div class="field">
-            <%= f.label :email, class: "label" %><br />
-            <%= f.email_field :email, autofocus: true, required: true, class: "input" %>
+            <%= f.label :email, class: :label %><br />
+                <%= f.email_field :email, autofocus: true, required: true, class: :input %>
         </div>
 
         <div class="field">
-            <%= f.label :email_confirmation, class: "label" %><br />
-            <%= f.email_field :email_confirmation, autocomplete: "off", required: true, class: "input" %>
+            <%= f.label :email_confirmation, class: :label %><br />
+                <%= f.email_field :email_confirmation, autocomplete: "off", required: true, class: :input %>
         </div>
 
         <div class="field">
-            <%= f.label :mobile_number, class: "label" %><br />
-            <%= f.text_field :mobile_number, autocomplete: "off", required: true, class: "input" %>
+            <%= f.label :mobile_number, class: :label %><br />
+                <%= f.text_field :mobile_number, autocomplete: "off", required: true, class: :input %>
         </div>
 
         <div class="field">
-            <%= f.label :mobile_number_confirmation, class: "label" %><br />
-            <%= f.text_field :mobile_number_confirmation, autocomplete: "off", required: true, class: "input" %>
+            <%= f.label :mobile_number_confirmation, class: :label %><br />
+                <%= f.text_field :mobile_number_confirmation, autocomplete: "off", required: true, class: :input %>
         </div>
 
         <div class="field">
-            <%= f.label :password, class: "label" %><br />
+            <%= f.label :password, class: :label %><br />
                 <% if @minimum_password_length %>
                     <em>(<%= @minimum_password_length %> characters minimum)</em>
                 <% end %><br />
-            <%= f.password_field :password, autocomplete: "off", required: true, class: "input" %>
+                    <%= f.password_field :password, autocomplete: "off", required: true, class: :input %>
         </div>
 
         <div class="field">
-            <%= f.label :password_confirmation, class: "label" %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "off", required: true, class: "input" %>
+            <%= f.label :password_confirmation, class: :label %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "off", required: true, class: :input %>
         </div>
 
         <div class="actions">
-            <%= f.button "Sign Up", type: :submit, class: "button" %>
+            <%= f.button "Sign Up", type: :submit, class: :button %>
         </div>
     <% end %>
 
     <%= render "devise/shared/links" %>
 
-</div>    
+</div>   
+ 
