@@ -25,4 +25,5 @@ TABLE
 }
 .tableIcon:hover, .tableIcon:focus {
     opacity: 0.8;
+    @include transition;      
 }
