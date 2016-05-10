@@ -4,18 +4,21 @@
 <div class="formWrapper">
     <%= form_for @comment do |f| %>
         <div class="field">
-            <%= f.label :email, class: "label" %><br />
+            <%= f.label :email, class: :label %><br />
             <% if user_signed_in? %> 
-            <%= f.text_field :email, autofocus: true, required: true, class: "input", value: current_user.email  %>
+            <%= f.text_field :email, autofocus: true, required: true, class: :input, value: current_user.email  %>
             <% else %>
-            <%= f.text_field :email, autofocus: true, required: true, class: "input" %>
+            <%= f.text_field :email, autofocus: true, required: true, class: :input %>
             <% end %>
-            <%= f.label :comment, class: "label" %><br />
-            <%= f.text_area :comment, autofocus: true, required: true, class: "input textArea" %>          
+        </div>
+
+        <div class="field">            
+            <%= f.label :comment, class: :label %><br />
+            <%= f.text_area :comment, required: true, class: [:input, :textArea] %>          
         </div>
 
         <div class="actions">
-            <%= f.button "Submit", type: :submit, class: "button" %>
+            <%= f.button "Submit", type: :submit, class: :button %>
         </div>
     <% end %>
 
