@@ -26,6 +26,8 @@
             <th class="tableHeading">Parish</th>
             <th class="tableHeading">Postcode</th>
             <th class="tableHeading">Capacity</th>
+            <th class="tableHeading">Edit</th>
+            <th class="tableHeading">Delete</th>
         </tr>
     <% @Locations.each do | location | %>
         <tr>
@@ -36,11 +38,17 @@
             <td class="tableValue"><%= location.parish %></td>
             <td class="tableValue"><%= location.post_code %></td>
             <td class="tableValue"><%= location.capacity %></td>
+<<<<<<< HEAD
             <td class="tableValue"><%= link_to edit_admin_location_path(location.id) do %>
+=======
+            <td class="tableValue">
+                <%= link_to admin_location_path(location.id) do %>
+>>>>>>> a28917997bcea0991c64119666133a9163328c72
                     <i class="tableIcon fa fa-2x fa-wrench"></i>
                 <% end %>
             </td>
-            <td><%= link_to new_admin_location_path do %>
+            <td class="tableValue">
+                <%= link_to new_admin_location_path do %>
                     <i class="tableIcon fa fa-2x fa-trash"></i>
                 <% end %>
             </td>
