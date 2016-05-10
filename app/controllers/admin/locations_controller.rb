@@ -22,7 +22,7 @@ class Admin::LocationsController < ApplicationController
     if @location.save
 
       flash[:notice] = "Location lodged."
-      redirect_to root_path
+      redirect_to admin_locations_path
 
     else
 
