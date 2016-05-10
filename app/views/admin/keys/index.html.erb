@@ -1,35 +1,16 @@
-<div>
-
-  <table>
-
-    <tr>
-
-      <th>Key ID</th>
-
-      <th>Key Name</th>
-
-      <th>User ID</th>
-
-      <th>User Email</th>
-
-    </tr>
-
+<table>
+        <tr>
+            <th>Key ID</th>
+            <th>Key Name</th>
+            <th>User ID</th>
+            <th>User Email</th>
+        </tr>
     <% @Keys.each do | key | %>
-
-      <tr>
-
-        <td><%= key.id %></td>
-
-        <td> <%= key.name %> </td>
-
-        <td> <%= key.user_id %> </td>
-
-        <td> <%= key.user.email %> </td>
-
-      </tr>
-
+        <tr>
+            <td><%= key.id %></td>
+            <td><%= key.name %></td>
+            <td><%= key.user_id %></td>
+            <td><%= key.user.email %></td>
+        </tr>
     <% end %>
-
-  </table>
-
-</div>
+</table>
