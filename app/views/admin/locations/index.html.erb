@@ -9,7 +9,12 @@
     <% end %>
 </div>
 
-<br />
+<p>
+    <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div> 
+    <% end %>
+</p>
+
 <%= link_to "Back", :back, class: :formLink %>
 
 <table class="table">
@@ -31,7 +36,7 @@
             <td class="tableValue"><%= location.parish %></td>
             <td class="tableValue"><%= location.post_code %></td>
             <td class="tableValue"><%= location.capacity %></td>
-            <td class="tableValue"><%= link_to admin_location_path(location.id) do %>
+            <td class="tableValue"><%= link_to edit_admin_location_path(location.id) do %>
                     <i class="tableIcon fa fa-2x fa-wrench"></i>
                 <% end %>
             </td>

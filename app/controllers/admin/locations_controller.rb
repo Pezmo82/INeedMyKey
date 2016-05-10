@@ -35,19 +35,19 @@ class Admin::LocationsController < ApplicationController
 
 	end
 
+  def edit
+
+    @location = Location.find(params[:id])
+
+  end
+
   def update
 
-    @location = Location.find_by(location_id)
-
-    if @location.save
-
-      flash[:notice] = "Location amended."
+    @location = Location.find(params[:id])
+    
+    if @location.update_attributes(location_params)
+      flash[:notice] = "Location Updated."
       redirect_to admin_locations_path
-
-    else
-
-      render :new
-
     end
   end
 

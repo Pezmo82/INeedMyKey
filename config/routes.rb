@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
     resources :keys, only: [:index]
 
-    resources :locations, only: [:new, :create, :index, :destroy, :update]
+    resources :locations, only: [:new, :create, :index, :destroy, :update, :edit]
 
   end
 
