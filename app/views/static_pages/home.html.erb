@@ -6,22 +6,22 @@
 	<% if user_signed_in? %>
 
 		<div class="boxWrapper group">
-			<%= link_to new_key_path, :class => "box" do %>
+			<%= link_to new_key_path, :class => "box boxLink" do %>
 				<h3 class="boxHeading">Add</h3>
 					<i class="boxIcon fa fa-5x fa-plus"></i>
 						<p class="boxText">Add a new key to your account.</p>
 			<% end %>
 
-			<%= link_to new_key_path, :class => "box" do %>
+			<%= link_to new_key_path, :class => "box boxLink" do %>
 				<h3 class="boxHeading">Store</h3>
 					<i class="boxIcon fa fa-5x fa-home"></i>
 						<p class="boxText">Store your key.</p>
 			<% end %>
 				
-			<%= link_to new_key_path, :class => "box" do %>
+			<%= link_to new_key_path, :class => "box boxLink" do %>
 				<h3 class="boxHeading">Retreive</h3>
 					<i class="boxIcon fa fa-5x fa-exchange"></i>
-						<p class="boxText">Request a key retreival.</p>
+						<p class="boxText">Request a key retrieval.</p>
 			<% end %>
 		</div>
 
@@ -43,6 +43,7 @@
 					 	<td class="keyValue"><%= key.updated_at %></td>
 					 <% end %>
 				</tr>
+
 				<% end %>
 
 			</table>
@@ -50,23 +51,23 @@
 	<% else %>
 
 		<div class="boxWrapper group">
-			<div class="box">
+			<%= link_to new_user_session_path, :class => "box boxlink" do %> 
 				<h3 class="boxHeading">Sign Up</h3>
 					<i class="boxIcon fa fa-5x fa-pencil-square-o"></i>
 						<p class="boxText">Sign up and log in to your account.</p>
-			</div>
+			<% end %>
 
-			<div class="box">
+			<%= link_to new_user_session_path, :class => "box boxlink" do %> 
 				<h3 class="boxHeading">Add</h3>
 					<i class="boxIcon fa fa-5x fa-plus"></i>
 						<p class="boxText">Add as many keys as you need to your account and deliver to our safe location.</p>
-			</div>
+			<% end %>
 
-			<div class="box">
+			<%= link_to new_user_session_path, :class => "box boxlink" do %> 
 				<h3 class="boxHeading">Retreive</h3>
 					<i class="boxIcon fa fa-5x fa-exchange"></i>
 						<p class="boxText">Log in, retrieve any lost key and collect from our safe location.</p>
-			</div>
+			<% end %>
 		</div>
 
 	<% end %>
