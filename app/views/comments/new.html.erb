@@ -5,11 +5,11 @@
     <%= form_for @comment do |f| %>
         <div class="field">
             <%= f.label :email, class: :label %><br />
-            <% if user_signed_in? %> 
-            <%= f.text_field :email, autofocus: true, required: true, class: :input, value: current_user.email  %>
-            <% else %>
-            <%= f.text_field :email, autofocus: true, required: true, class: :input %>
-            <% end %>
+                <% if user_signed_in? %> 
+                    <%= f.text_field :email, autofocus: true, required: true, class: :input, value: current_user.email  %>
+                <% else %>
+                    <%= f.text_field :email, autofocus: true, required: true, class: :input %>
+                <% end %>
         </div>
 
         <div class="field">            
