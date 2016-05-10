@@ -131,9 +131,6 @@ display: inline-block;*/
 .boxIcon {
     color: $lilac;
 }
-.box:hover {
-    opacity: 0.8;
-}
 .boxHeading, .boxText {
     margin: 0;
     padding: 20px;
@@ -148,4 +145,7 @@ display: inline-block;*/
     display: block;
     cursor: pointer;
     text-decoration: none;
+}
+.boxLink:hover {
+    opacity: 0.8;
 }
