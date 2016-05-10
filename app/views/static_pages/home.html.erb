@@ -6,19 +6,19 @@
 	<% if user_signed_in? %>
 
 		<div class="boxWrapper group">
-			<%= link_to new_key_path, :class => "box" do %>
+			<%= link_to new_key_path, class: [:box, :boxLink] do %>
 				<h3 class="boxHeading">Add</h3>
 					<i class="boxIcon fa fa-5x fa-plus"></i>
 						<p class="boxText">Add a new key to your account.</p>
 			<% end %>
 
-			<%= link_to new_key_path, :class => "box" do %>
+			<%= link_to new_key_path, class: [:box, :boxLink] do %>
 				<h3 class="boxHeading">Store</h3>
 					<i class="boxIcon fa fa-5x fa-home"></i>
 						<p class="boxText">Store your key.</p>
 			<% end %>
 				
-			<%= link_to new_key_path, :class => "box" do %>
+			<%= link_to new_key_path, class: [:box, :boxLink] do %>
 				<h3 class="boxHeading">Retreive</h3>
 					<i class="boxIcon fa fa-5x fa-exchange"></i>
 						<p class="boxText">Request a key retreival.</p>
