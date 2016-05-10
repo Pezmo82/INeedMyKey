@@ -5,8 +5,7 @@ CORE
     outline: 0;
     @include box-sizing;
     -webkit-tap-highlight-color: transparent;
-    border-style: none;
-    cursor: default;    
+    border-style: none;  
     font-weight: 400;      
 }
 .group:after {
