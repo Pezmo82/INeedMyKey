@@ -15,14 +15,17 @@ class Admin::LocationsController < ApplicationController
         @location = Location.new(location_params)
 
         if @location.save
-            flash[:notice] = "Location Added."
+            flash[:notice] = "Location added."
             redirect_to admin_locations_path
         else
             render :new
         end
     end
 
-	def delete
+	def destroy
+        Location.find(params[:id]).destroy
+        flash[:success] = "Location deleted"
+        redirect_to admin_locations_path
 	end
 
     def edit
