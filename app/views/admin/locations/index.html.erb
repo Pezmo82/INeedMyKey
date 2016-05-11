@@ -43,10 +43,8 @@
                     <i class="tableIcon fa fa-2x fa-wrench"></i>
                 <% end %>
             </td>
-            <td class="tableValue">
-                <%= link_to admin_location_path(location.id) method: :delete do %>
-                    <i class="tableIcon fa fa-2x fa-trash"></i>
-                <% end %>
+            <td class="tableValue">    
+              <%= link_to "Delete", admin_location_path(location.id), method: :delete, data: { confirm: "You sure?" } %>
             </td>
         </tr>
     <% end %>
