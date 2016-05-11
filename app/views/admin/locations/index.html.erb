@@ -44,7 +44,7 @@
                 <% end %>
             </td>
             <td class="tableValue">
-                <%= link_to new_admin_location_path do %>
+                <%= link_to admin_location_path(location.id) method: :delete do %>
                     <i class="tableIcon fa fa-2x fa-trash"></i>
                 <% end %>
             </td>
