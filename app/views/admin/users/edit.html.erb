@@ -1,6 +1,12 @@
 <h1 class="mainHeading">Edit - <%= @user.email %></h1>
     <hr class="faded" />
 
+    <ul>
+        <li>Super Administrator - Has super powers (Batman)</li>
+        <li>Administrator - Has some powers (Robin)</li>
+        <li>End User - Has no controls over accounts (except self)</li>
+    </ul>
+
 <div class="formWrapper">
     <%= form_for [:admin, @user] do |f| %>
 
