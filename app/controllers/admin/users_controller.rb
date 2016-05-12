@@ -20,4 +20,9 @@ class Admin::UsersController < ApplicationController
 	  	end
 	end
 
+		private
+	    	def user_params
+		      	params.require(:user).permit(:rank_id)
+		    end
+		    
 end
