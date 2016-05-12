@@ -24,6 +24,7 @@ class KeysController < ApplicationController
     end
 
     private
+    
         def key_params
             params.require(:key).permit(:name)
         end
