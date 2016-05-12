@@ -2,11 +2,11 @@
 	<hr class="faded" />
 
 <div class="boxWrapper group">
-	<div class="box">		
+	<a <% if user_signed_in? %> href="tel:07797745690" <% else %> href="" <% end %>class="box boxLink">		
 		<h3 class="boxHeading">Call</h3>
 			<i class="boxIcon fa fa-5x fa-phone"></i>
-				<p class="boxText">Jersey: 01534 012 012 &amp; UK: 0207 732 4130</p>
-	</div>
+				<p class="boxText">Phone support for active customers only</p>
+	</a>
 	
 	<%= link_to new_comment_path, class: [:box, :boxLink] do %>
 		<h3 class="boxHeading">Email</h3>
@@ -14,9 +14,9 @@
 				<p class="boxText">Click here</p>
 	<% end %>
 
-	<div class="box">
+	<a href="https://facebook.com" class="box boxLink" target="_blank">
 		<h3 class="boxHeading">Like us</h3>
 			<i class="boxIcon fa fa-5x fa-facebook"></i>
 				<p class="boxText">Follow us via social media</p>
-	</div>
+	</a>
 </div>
