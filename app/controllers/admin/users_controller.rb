@@ -20,9 +20,16 @@ class Admin::UsersController < ApplicationController
 	  	end
 	end
 
+	def destroy
+        User.find(params[:id]).destroy
+        flash[:success] = "User deleted"
+        redirect_to admin_users_path
+    end
+
+
 		private
 	    	def user_params
 		      	params.require(:user).permit(:rank_id)
 		    end
-		    
+
 end
