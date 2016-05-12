@@ -1,0 +1,18 @@
+<h1 class="mainHeading">Edit - <%= @user.email %></h1>
+    <hr class="faded" />
+
+<div class="formWrapper">
+    <%= form_for [:admin, @user] do |f| %>
+
+        <div class="field">
+            <%= f.label :rank_id, class: :label %><br />
+                <%= f.text_field :rank_id, required: true, class: :input %>
+        </div>
+
+        <div class="actions">
+            <%= f.button "Submit changes to rank", type: :submit, method: :patch, class: :button %>
+        </div>
+    <% end %>
+    
+    <%= link_to "Back", :back, class: :formLink %>
+</div>
