@@ -10,8 +10,11 @@ class StoragesController < ApplicationController
 
   def create
 
+#    raise params.inspect
+
     @storage = Storage.new
     @storage.location_id = pick_location
+    @storage.key_id = params[:storage][:key_id]
 
     if @storage.save
 
@@ -33,7 +36,7 @@ class StoragesController < ApplicationController
 
     @locations = Location.all
 
-    @location = @locations.find_by id: rand(@locations.count)
+    @location = Location.order("RAND()").first
 
     return @location.id
 
