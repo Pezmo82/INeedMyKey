@@ -1,0 +1,11 @@
+<div>
+
+  <%= form_for @storage do |f| %>
+
+    <%= f.collection_select :key, @keys, :name, :name %>
+
+    <%= f.button "Store Key", type: :submit, class: :button %>
+
+  <% end %>
+
+</div>

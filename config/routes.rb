@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :keys, only: [:new, :create, :delete, :show]
 
+  resources :storages, only: [:new, :create]
+
   resources :comments, only: [:new, :create, :delete, :show]
 
   resources :admin, only: [:index]
