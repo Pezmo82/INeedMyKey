@@ -1,4 +1,4 @@
-<h1 class="mainHeading">New Location</h1>
+<h1 class="mainHeading">Edit Locations</h1>
     <hr class="faded" />
 
 <div class="formWrapper">
@@ -34,9 +34,9 @@
          </div>
 
         <div class="actions">
-            <%= f.button "Add Location", type: :submit, class: :button %>
+            <%= f.button "Submit changes to Location", type: :submit, method: :patch, class: :button %>
         </div>
     <% end %>
-
+    
     <%= link_to "Back", :back, class: :formLink %>
 </div>

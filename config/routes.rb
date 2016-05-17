@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :keys, only: [:new, :create, :delete, :show]
+  resources :keys, only: [:new, :create, :destroy, :show]
 
   resources :storages, only: [:new, :create]
 
@@ -12,11 +12,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
 
-    resources :users, only: [:index]
+    resources :users, only: [:index, :edit, :update, :destroy, :delete]
 
     resources :keys, only: [:index]
 
-    resources :locations, only: [:new, :create, :index]
+    resources :locations, only: [:new, :create, :index, :destroy, :update, :edit]
 
   end
 
