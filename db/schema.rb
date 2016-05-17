@@ -11,17 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506155041) do
-
-  create_table "addresses", force: :cascade do |t|
-    t.string   "location",   limit: 30, null: false
-    t.string   "line1",      limit: 50, null: false
-    t.string   "line2",      limit: 50, null: false
-    t.string   "line3",      limit: 50, null: false
-    t.string   "parish",     limit: 15, null: false
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-  end
+ActiveRecord::Schema.define(version: 20160517174044) do
 
   create_table "keys", force: :cascade do |t|
     t.string   "name",       limit: 50,  null: false
@@ -53,10 +43,11 @@ ActiveRecord::Schema.define(version: 20160506155041) do
   add_index "ranks", ["name"], name: "name", unique: true, using: :btree
 
   create_table "storages", force: :cascade do |t|
-    t.integer  "key_id",       limit: 4
-    t.integer  "location_id",  limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "key_id",      limit: 4
+    t.integer  "location_id", limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.boolean  "is_stored"
   end
 
   add_index "storages", ["key_id"], name: "index_storages_on_key_id", using: :btree
