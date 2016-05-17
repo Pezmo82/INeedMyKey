@@ -60,11 +60,15 @@ FORM
 	color: $lilac;
     @include transition;
 }
-
 .textArea {
     height: 100px;
     text-align: left;
 }
+#rc-imageselect, .g-recaptcha {
+    transform:scale(0.86);
+    -webkit-transform:scale(0.86);
+    transform-origin:0 0;
+    -webkit-transform-origin:0 0;}
 
 /********************
 ERRORS
