@@ -41,8 +41,8 @@
                 <%= f.password_field :password_confirmation, autocomplete: "off", required: true, class: :input %>
         </div>
 
-        <div class="field">            
-            <div class="g-recaptcha" data-sitekey="6LdRLSATAAAAAEIkCCpuJwM79TZnFJPjHbzdGvR9"></div>   
+        <div class="field"> 
+            <%= recaptcha_tags(ajax:true) %>   
         </div>    
 
         <div class="actions">
