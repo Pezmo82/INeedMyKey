@@ -29,17 +29,19 @@
 					<tr>
 						<th class="tableHeading">Key Name</th>
 						<th class="tableHeading">Added</th>
-						<th class="tableHeading">Last Retrieved</th>
+						<th class="tableHeading">Status</th>
 					</tr>
 				<% current_user.keys.each do | key | %>
 					<tr>
 						<td class="tableValue"><%= key.name %></td>
 						<td class="tableValue"><%= key.created_at.strftime("%d %b %Y - %H:%M") %></td>
-							<% if key.created_at == key.updated_at %>
-						 		<td class="tableValue">N/A</td>
+						<td class="tableValue">
+							<% if Storage.find_by(key_id: key.id).try(:is_stored) %>
+								Stored
 							<% else %>
-								<td class="tableValue"><%= key.updated_at %></td>
+								Not Stored
 							<% end %>
+						</td>
 					</tr>
 				<% end %>
 				<tr><td><p><p></td></tr>
