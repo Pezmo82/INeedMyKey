@@ -17,7 +17,7 @@
 					<i class="boxIcon fa fa-5x fa-home"></i>
 						<p class="boxText">Store your key.</p>
 			<% end %>
-				
+
 			<%= link_to new_key_path, class: [:box, :boxLink] do %>
 				<h3 class="boxHeading">Retreive</h3>
 					<i class="boxIcon fa fa-5x fa-exchange"></i>
@@ -28,7 +28,7 @@
 			<table class="table">
 					<tr>
 						<th class="tableHeading">Key Name</th>
-						<th class="tableHeading">Added</th>		
+						<th class="tableHeading">Added</th>
 						<th class="tableHeading">Last Retrieved</th>
 					</tr>
 				<% current_user.keys.each do | key | %>
@@ -42,6 +42,10 @@
 							<% end %>
 					</tr>
 				<% end %>
+				<tr><td><p><p></td></tr>
+				<tr>
+					<td>Total Keys: <%= current_user.keys.count() %></td>
+				</tr>
 			</table>
 
 	<% else %>
