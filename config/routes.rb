@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
     resources :users, only: [:index, :edit, :update, :destroy, :delete]
 
-    resources :keys, only: [:index]
+    resources :keys, only: [:index, :edit, :update]
 
     resources :locations, only: [:new, :create, :index, :destroy, :update, :edit]
 

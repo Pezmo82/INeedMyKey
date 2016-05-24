@@ -17,6 +17,10 @@
                 <%= f.text_area :comment, required: true, class: [:input, :textArea] %>          
         </div>
 
+        <div class="field"> 
+            <%= recaptcha_tags(ajax:true) %>   
+        </div>        
+
         <div class="actions">
             <%= f.button "Submit", type: :submit, class: :button %>
         </div>

@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+
+en:
+  recaptcha:
+    errors:
+      incorrect-captcha-sol: 'Fail'
+      

@@ -7,12 +7,12 @@ class CommentsController < ApplicationController
     def create
         @comment = Comment.new(params[:comment])
         
-        if @comment.valid?
+        if verify_recaptcha(model: @comment) && @comment.valid?
             # TODO send message here
             flash[:notice] = "Message sent! Thank you for contacting us."
             redirect_to comments_path
         else
-            render :action => 'new'
+            render action: 'new'
         end
     end
 
