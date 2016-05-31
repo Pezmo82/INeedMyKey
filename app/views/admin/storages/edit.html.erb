@@ -1,0 +1,22 @@
+<h1 class="mainHeading">Change location of key</h1>
+    <hr class="faded" />
+
+<div class="formWrapper">
+    <%= form_for [:admin, @storage] do |f| %>
+
+        <div class="field">
+            <%= f.label :current_location, class: :label %><br />
+                <%= f.text_field :location_id, required: true %><br />
+        </div>  
+        <div class="field">
+             <%= f.label :new_location, class: :label %><br />
+                <%= f.text_field :location_id, required: true, class: :input  %>
+        </div>
+
+        <div class="actions">
+            <%= f.button "Submit changes to key location", type: :submit, method: :patch, class: :button %>
+        </div>
+    <% end %>
+    
+    <%= link_to "Back", :back, class: :formLink %>
+</div>

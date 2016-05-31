@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
     resources :locations, only: [:new, :create, :index, :destroy, :update, :edit]
 
+    resources :storages, only: [:new, :edit, :update, :create]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
