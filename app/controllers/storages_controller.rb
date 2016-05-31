@@ -15,7 +15,7 @@ class StoragesController < ApplicationController
     @key = Key.find_by id: params[:storage][:key_id]
     @storage.key_id = @key.id
 
-    @key.auth_code = SecureRandom.base64(32)
+    @key.auth_code = generateAuthcode
 
     @key.save
 
@@ -31,6 +31,25 @@ class StoragesController < ApplicationController
       render new
 
     end
+
+  end
+
+  private
+
+  def generateAuthcode
+
+    i = 0
+
+    genAuth = ""
+
+    if i < 5
+
+      genAuth += rand().to_s
+      i += 1
+
+    end
+
+    return genAuth
 
   end
 

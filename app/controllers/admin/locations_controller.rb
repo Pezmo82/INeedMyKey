@@ -7,13 +7,21 @@ class Admin::LocationsController < ApplicationController
         @Locations = Location.all
     end
 
+    def show
+
+      @Location = Location.find(params[:id])
+
+      @Storages = Storage.find_by location_id: @Location.id
+
+    end
+
     def new
         @location = Location.new
     end
 
     def create
         @location = Location.new(location_params)
-        
+
         if @location.save
             flash[:notice] = "Location added."
             redirect_to admin_locations_path
@@ -34,7 +42,7 @@ class Admin::LocationsController < ApplicationController
 
     def update
         @location = Location.find(params[:id])
-        
+
         if @location.update_attributes(location_params)
             flash[:notice] = "Location Updated."
             redirect_to admin_locations_path
@@ -46,5 +54,5 @@ class Admin::LocationsController < ApplicationController
             def location_params
                 params.require(:location).permit(:name, :address_line_1, :address_line_2, :parish, :post_code, :capacity)
             end
-            
+
 end
