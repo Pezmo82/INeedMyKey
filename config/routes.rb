@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
     namespace :locations do
 
-      resources :authorise, only: [:show]
+      resources :authorise, only: [:show, :new]
 
     end
 
