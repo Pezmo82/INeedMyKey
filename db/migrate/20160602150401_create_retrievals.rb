@@ -1,6 +1,6 @@
-class CreateRetrieves < ActiveRecord::Migration
+class CreateRetrievals < ActiveRecord::Migration
   def change
-    create_table :retrieves do |t|
+    create_table :retrievals do |t|
       t.integer :key_id
       t.integer :location_id
       t.datetime :created_at

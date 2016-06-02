@@ -1,0 +1,13 @@
+<div>
+
+  <h2>You'll be lucky if this works.</h2>
+
+  <%= form_for @retrieval do |f| %>
+
+    <%= f.collection_select :key_id, @keys, :id, :name %>
+
+    <%= f.button "Retrieve Key", type: :submit, class: :button %>
+
+  <% end %>
+
+</div>
