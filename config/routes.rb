@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :storages, only: [:new, :edit, :update, :create]
 
   resources :retrievals, only: [:new, :edit, :update, :create]
-  
+
   resources :comments, only: [:new, :create, :delete, :show]
 
   resources :admin, only: [:index]
@@ -21,6 +21,13 @@ Rails.application.routes.draw do
     resources :locations, only: [:show, :new, :create, :index, :destroy, :update, :edit]
 
     resources :storages, only: [:new, :edit, :update, :create]
+
+    namespace :locations do
+
+      resources :authorise, only: [:show]
+
+    end
+
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
