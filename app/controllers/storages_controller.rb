@@ -11,11 +11,15 @@ class StoragesController < ApplicationController
   def create
 
     @storage = Storage.new
-    @storage.location_id = pick_location
+
+    location_id = pick_location
+
+    @storage.location_id = location_id
     @key = Key.find_by id: params[:storage][:key_id]
     @storage.key_id = @key.id
 
     @key.auth_code = generateAuthcode
+    @key.location_id = location_id
 
     @key.save
 
@@ -38,16 +42,9 @@ class StoragesController < ApplicationController
 
   def generateAuthcode
 
-    i = 0
+    psrn = Random.new
 
-    genAuth = ""
-
-    if i < 5
-
-      genAuth += rand().to_s
-      i += 1
-
-    end
+    genAuth = psrn.rand(10000..99999)
 
     return genAuth
 

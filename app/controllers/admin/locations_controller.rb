@@ -9,9 +9,7 @@ class Admin::LocationsController < ApplicationController
 
     def show
 
-      @Location = Location.find(params[:id])
-
-      @Storages = Storage.find_by location_id: @Location.id
+      @storages = Storage.where(["location_id = :location_id", { location_id: params[:id]}]).order(is_stored: :asc)
 
     end
 

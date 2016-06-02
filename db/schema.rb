@@ -11,16 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524173807) do
+ActiveRecord::Schema.define(version: 20160531172906) do
 
   create_table "keys", force: :cascade do |t|
-    t.string   "name",       limit: 50,  null: false
-    t.integer  "user_id",    limit: 4,   null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "auth_code",  limit: 255
+    t.string   "name",           limit: 50,  null: false
+    t.integer  "user_id",        limit: 4,   null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "auth_code",      limit: 255
+    t.integer  "location_id_id", limit: 4
+    t.integer  "location_id",    limit: 4
   end
 
+  add_index "keys", ["location_id"], name: "index_keys_on_location_id", using: :btree
+  add_index "keys", ["location_id_id"], name: "index_keys_on_location_id_id", using: :btree
   add_index "keys", ["user_id"], name: "index_keys_on_user_id", using: :btree
 
   create_table "locations", force: :cascade do |t|
@@ -76,6 +80,7 @@ ActiveRecord::Schema.define(version: 20160524173807) do
   add_index "users", ["rank_id"], name: "index_users_on_rank_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "keys", "locations"
   add_foreign_key "keys", "users"
   add_foreign_key "storages", "keys"
   add_foreign_key "storages", "locations"

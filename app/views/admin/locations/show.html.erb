@@ -1,17 +1,33 @@
-<table class="table">
+<% if @storages.blank? %>
 
-  <tr>
+  <h3> There are no keys stored here :(</h3>
 
-    <th>Key ID</th>
-    <th>Status</th>
-    <th>Date </th>
+<% else %>
 
-  </tr>
+  <table class="table">
 
-  <% @Storages.each do | storage | %>
+    <tr>
 
+      <th>Key ID</th>
+      <th>Status</th>
+      <th>Date </th>
 
+    </tr>
 
-  <% end %>
+      <% @storages.each do | storage | %>
 
-</table>
+        <tr>
+
+          <td class="tableValue"> <%= storage.key_id %> </td>
+
+          <td class="tableValue"> <% if storage.is_stored %> Stored <% else %> Awaiting <% end %> </td>
+
+          <td class="tableValue"> <%= storage.updated_at %> </td>
+
+        </tr>
+
+      <% end %>
+
+  </table>
+
+<% end %>
