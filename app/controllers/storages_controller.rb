@@ -2,7 +2,7 @@ class StoragesController < ApplicationController
 
   def new
 
-    @keys = current_user.keys.all
+    @keys = current_user.keys.where("location_id IS NULL")
 
     @storage = Storage.new
 
