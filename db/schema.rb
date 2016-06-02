@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20160602150401) do
 
   add_index "ranks", ["name"], name: "name", unique: true, using: :btree
 
-  create_table "retrieves", force: :cascade do |t|
+  create_table "retrievals", force: :cascade do |t|
     t.integer  "key_id",        limit: 4
     t.integer  "location_id",   limit: 4
     t.datetime "created_at",              null: false
@@ -53,6 +53,9 @@ ActiveRecord::Schema.define(version: 20160602150401) do
     t.boolean  "was_retrieved"
   end
 
+  add_index "retrievals", ["key_id"], name: "index_retrievals_on_key_id", using: :btree
+  add_index "retrievals", ["location_id"], name: "index_retrievals_on_location_id", using: :btree
+  
   create_table "storages", force: :cascade do |t|
     t.integer  "key_id",        limit: 4
     t.integer  "location_id",   limit: 4

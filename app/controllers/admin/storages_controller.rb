@@ -8,7 +8,9 @@ class Admin::StoragesController < ApplicationController
     end
 
     def edit
-        @storage = Storage.find(params[:id])
+        key = Key.find(params[:id])
+
+        @storage = (Storage.find_by key_id: key.id)  
     end
 
     def update

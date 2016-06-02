@@ -1,8 +1,8 @@
 class CreateRetrievals < ActiveRecord::Migration
   def change
     create_table :retrievals do |t|
-      t.integer :key_id
-      t.integer :location_id
+      t.references :key, index: true, foreign_key: true
+      t.references :location, index: true, foreign_key: true
       t.datetime :created_at
       t.datetime :updated_at
       t.boolean :is_stored

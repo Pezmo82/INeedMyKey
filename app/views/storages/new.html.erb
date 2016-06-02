@@ -1,4 +1,4 @@
-<div>
+<div class="formWrapper">
 
   <h2>You'll be lucky if this works.</h2>
 
@@ -6,7 +6,7 @@
 
     <%= f.collection_select :key_id, @keys, :id, :name %>
 
-    <%= f.button "Store Key", type: :submit, class: :button %>
+    <%= f.button "Store Key", type: :submit, method: :patch, class: :button %>
 
   <% end %>
 

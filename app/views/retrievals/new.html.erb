@@ -1,12 +1,18 @@
-<div>
+<h1 class="mainHeading">Key Retrieval</h1>
+    <hr class="faded" />
 
-  <h2>You'll be lucky if this works.</h2>
+        <%= link_to "Back", :back, class: :formLink %>
+ <br>
+
+<div class="formWrapper">
 
   <%= form_for @retrieval do |f| %>
 
     <%= f.collection_select :key_id, @keys, :id, :name %>
 
-    <%= f.button "Retrieve Key", type: :submit, class: :button %>
+
+
+    <%= f.button "Retrieve Key", type: :submit, method: :patch, class: :button %>
 
   <% end %>
 
