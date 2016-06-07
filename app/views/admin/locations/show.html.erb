@@ -1,3 +1,6 @@
+<h1 class="mainHeading">Authorise Key</h1>
+    <hr class="faded" />
+
 <div class="boxWrapper group">
     <%= link_to admin_locations_authorise_path(params[:id]), class: [:box, :boxLink] do %>
         <h3 class="boxHeading">Authorise Key</h3>
@@ -7,7 +10,7 @@
 </div>
 
 <% if @storages.blank? %>
-	<h3> There are no keys stored here :(</h3>
+	<h3>There are no keys stored.</h3>
 <% else %>
 
 	<table class="table">

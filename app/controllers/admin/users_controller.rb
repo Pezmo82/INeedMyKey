@@ -15,17 +15,16 @@ class Admin::UsersController < ApplicationController
 		@user = User.find(params[:id])
 	    
 	  	if @user.update_attributes(user_params)
-	    	flash[:notice] = "User rank updated."
+	    	flash[:notice] = "User Rank Updated."
 	    	redirect_to admin_users_path
 	  	end
 	end
 
 	def destroy
         User.find(params[:id]).destroy
-        flash[:success] = "User deleted"
+        flash[:success] = "User Deleted."
         redirect_to admin_users_path
     end
-
 
 		private
 	    	def user_params

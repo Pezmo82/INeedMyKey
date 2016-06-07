@@ -3,39 +3,29 @@ class RetrievalsController < ApplicationController
     before_action :authenticate_user!
 
     def new
-
         @keys = current_user.keys.all
-
         @retrieval = Retrieval.new
-
     end
 
     def create
-
         @retrieval = Retrieval.new
         @key = Key.find_by id: params[:retrieval][:key_id]
         @retrieval.key_id = @key.id
-
         @key.auth_code = generateAuthcode
-
         @key.save
 
         if @retrieval.save
-
-          flash['notice'] = "Retrieval information has been sent to you."
-          redirect_to root_path
-
+        	flash['notice'] = "Retrieval information has been sent to you."
+          	redirect_to root_path
         else
-
-          flash['error'] = "Key retrieval has failed."
-          render new
-
+          	flash['error'] = "Key retrieval has failed."
+          	render new
         end
 
     end
 
     def edit
-         @retrieval = Location.find(params[:id])
+        @retrieval = Location.find(params[:id])
     end
 
     def update
@@ -47,16 +37,13 @@ class RetrievalsController < ApplicationController
         end
     end
 
-    private
+    	private
 
-    def generateAuthcode
+		    def generateAuthcode
+		    	psrn = Random.new
+				genAuth = psrn.rand(10000..99999)
 
-      psrn = Random.new
-
-      genAuth = psrn.rand(10000..99999)
-
-      return genAuth
-
-    end
+		      	return genAuth
+		    end
 
 end
