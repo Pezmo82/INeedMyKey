@@ -1,45 +1,32 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+	devise_for :users
+	resources :keys, only: [:new, :create, :destroy, :show]
+	resources :storages, only: [:new, :edit, :update, :create]
+	resources :retrievals, only: [:new, :edit, :update, :create]
+	resources :comments, only: [:new, :create, :delete, :show]
+	resources :admin, only: [:index]
+	
+		namespace :admin do
+			resources :users, only: [:index, :edit, :update, :destroy, :delete]
+			resources :keys, only: [:index, :edit, :update]
+			resources :locations, only: [:show, :new, :create, :index, :destroy, :update, :edit]
+			resources :storages, only: [:new, :edit, :update, :create]
 
-  resources :keys, only: [:new, :create, :destroy, :show]
-
-  resources :storages, only: [:new, :edit, :update, :create]
-
-  resources :retrievals, only: [:new, :edit, :update, :create]
-
-  resources :comments, only: [:new, :create, :delete, :show]
-
-  resources :admin, only: [:index]
-
-  namespace :admin do
-
-    resources :users, only: [:index, :edit, :update, :destroy, :delete]
-
-    resources :keys, only: [:index, :edit, :update]
-
-    resources :locations, only: [:show, :new, :create, :index, :destroy, :update, :edit]
-
-    resources :storages, only: [:new, :edit, :update, :create]
-
-    namespace :locations do
-
-      resources :authorise, only: [:show, :new]
-
-      post "authorise/:id" => "authorise#authorise"
-
-    end
-
-  end
+    		namespace :locations do
+    			resources :authorise, only: [:show, :new]
+				post "authorise/:id" => "authorise#authorise"
+			end
+  		end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'static_pages#home'
+	root 'static_pages#home'
 
-  get "contact" => "static_pages#contact"
-  get "account" => "users#account"
+	get "contact" => "static_pages#contact"
+	get "account" => "users#account"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

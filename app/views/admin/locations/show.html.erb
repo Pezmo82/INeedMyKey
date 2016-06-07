@@ -9,11 +9,11 @@
     <% end %>
 </div>
 
-<p>
-    <% flash.each do |flash_key, flash_value| %>
-      <div class="alert"><%= flash_key %><%= flash_value %></div>
-    <% end %>
-</p>
+	<p>
+	    <% flash.each do |flash_key, flash_value| %>
+	      <div class="alert"><%= flash_key %><%= flash_value %></div>
+	    <% end %>
+	</p>
 
 <% if @storages.blank? %>
 	<h3>There are no keys stored.</h3>
