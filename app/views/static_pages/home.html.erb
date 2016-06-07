@@ -18,12 +18,19 @@
 						<p class="boxText">Store your key.</p>
 			<% end %>
 
-			<%= link_to new_key_path, class: [:box, :boxLink] do %>
+			<%= link_to new_retrieval_path, class: [:box, :boxLink] do %>
 				<h3 class="boxHeading">Retreive</h3>
 					<i class="boxIcon fa fa-5x fa-exchange"></i>
 						<p class="boxText">Request a key retreival.</p>
 			<% end %>
 		</div>
+
+			<p>
+				<% flash.each do |key, value| %>
+					<div class="alert alert-<%= key %>"><%= value %></div> 
+				<% end %>
+			</p>
+
 
 			<table class="table">
 					<tr>
