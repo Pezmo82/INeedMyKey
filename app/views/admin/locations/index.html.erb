@@ -11,7 +11,7 @@
 
 <p>
     <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>"><%= value %></div> 
+    <div class="alert alert-<%= key %>"><%= value %></div>
     <% end %>
 </p>
 
@@ -32,7 +32,7 @@
     <% @Locations.each do | location | %>
         <tr>
             <td class="tableValue"><%= location.id %></td>
-            <td class="tableValue"><%= location.name %></td>
+            <td class="tableValue"><%= link_to location.name, admin_location_path(location.id) %></td>
             <td class="tableValue"><%= location.address_line_1 %></td>
             <td class="tableValue"><%= location.address_line_2 %></td>
             <td class="tableValue"><%= location.parish %></td>
@@ -43,7 +43,7 @@
                     <i class="tableIcon fa fa-2x fa-wrench"></i>
                 <% end %>
             </td>
-            <td class="tableValue">    
+            <td class="tableValue">
                 <%= link_to admin_location_path(location.id), method: :delete, data: { confirm: "You sure?" } do %>
                     <i class="tableIcon fa fa-2x fa-trash"></i>
                 <% end %>

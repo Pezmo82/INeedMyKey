@@ -2,7 +2,7 @@ class StoragesController < ApplicationController
 
   def new
 
-    @keys = current_user.keys.all
+    @keys = current_user.keys.where("location_id IS NULL")
 
     @storage = Storage.new
 
@@ -11,11 +11,15 @@ class StoragesController < ApplicationController
   def create
 
     @storage = Storage.new
-    @storage.location_id = pick_location
+
+    location_id = pick_location
+
+    @storage.location_id = location_id
     @key = Key.find_by id: params[:storage][:key_id]
     @storage.key_id = @key.id
 
-    @key.auth_code = SecureRandom.base64(32)
+    @key.auth_code = generateAuthcode
+    @key.location_id = location_id
 
     @key.save
 
@@ -31,6 +35,18 @@ class StoragesController < ApplicationController
       render new
 
     end
+
+  end
+
+  private
+
+  def generateAuthcode
+
+    psrn = Random.new
+
+    genAuth = psrn.rand(10000..99999)
+
+    return genAuth
 
   end
 

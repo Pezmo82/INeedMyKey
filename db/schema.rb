@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20160602150401) do
 
   add_index "retrievals", ["key_id"], name: "index_retrievals_on_key_id", using: :btree
   add_index "retrievals", ["location_id"], name: "index_retrievals_on_location_id", using: :btree
-  
+
   create_table "storages", force: :cascade do |t|
     t.integer  "key_id",        limit: 4
     t.integer  "location_id",   limit: 4
