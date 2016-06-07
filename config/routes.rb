@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
       resources :authorise, only: [:show, :new]
 
+      post "authorise/:id" => "authorise#authorise"
+
     end
 
   end

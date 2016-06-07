@@ -1,7 +1,7 @@
 <%= form_for admin_locations_authorise_path do |f| %>
 
   <%= f.label "Authorisation Code" %>
-  <%= f.text_field "Authorisation Code", autofocus: true, required: true, class: :input %>
+  <%= f.text_field "authcode", autofocus: true, required: true, class: :input %>
   <%= f.submit "Submit", type: :submit, class: :button %>
 
 <% end %>
