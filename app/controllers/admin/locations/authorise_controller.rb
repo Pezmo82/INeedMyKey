@@ -10,7 +10,7 @@ class Admin::Locations::AuthoriseController < ApplicationController
 
       @location = Location.find(params[:id])
 
-      @storages = Storage.where("location_id = params[:id]")
+      @storages = Storage.where("location_id = :location_id", {location_id: params[:id]})
 
       @storages.each do | storage |
 

@@ -16,10 +16,9 @@ class RetrievalsController < ApplicationController
         @key = Key.find_by id: params[:retrieval][:key_id]
         @retrieval.key_id = @key.id
 
-        @key.auth_code = SecureRandom.base64(32)
+        @key.auth_code = generateAuthcode
 
         @key.save
-
 
         if @retrieval.save
 
@@ -41,11 +40,23 @@ class RetrievalsController < ApplicationController
 
     def update
         @retrieval = Location.find(params[:id])
-        
+
         if @location.update_attributes(location_params)
             flash[:notice] = "Location Updated."
             redirect_to admin_locations_path
         end
+    end
+
+    private
+
+    def generateAuthcode
+
+      psrn = Random.new
+
+      genAuth = psrn.rand(10000..99999)
+
+      return genAuth
+
     end
 
 end
