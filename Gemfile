@@ -33,6 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'recaptcha', require: 'recaptcha/rails'
 
+gem 'chartkick'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
