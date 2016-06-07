@@ -6,6 +6,10 @@ CONTENT
     height: $hundred;
     margin: 0;
     padding: 0;
+    background-color: $purpley;
+    background-image: url(tile.jpg);
+    background-repeat: repeat;
+    background-blend-mode: multiply;     
 }
 .side {
     width: 280px;
@@ -17,8 +21,12 @@ CONTENT
         min-height: 108px;
         clear: both;
         background-color: $purpley;
+        background-image: url(tile.jpg);
+        background-repeat: repeat;
+        background-blend-mode: multiply; 
         overflow: hidden;
-        border-bottom: 8px solid $lilac;
+        border-bottom: 8px solid $ghost;
+        z-index: 10;
     }
 }
 .innerSide {
@@ -100,19 +108,19 @@ BOX
     width: calc(100% / 3 - 14px);
     display: block;
     float: left;
-/*width: 32%;
-display: inline-block;*/
     margin: 0 0 -1000px 0;
     padding-bottom: 1000px;
-    background-color: $purpley;
     color: $ghost;
     text-align: center; 
     @include text-shadow;
-    @include transition;            
+    @include transition;
+    background-color: $purpley;
+    background-image: url(tile.jpg);
+    background-repeat: repeat;
+    background-blend-mode: multiply;
+    position: relative;
+    z-index: 0;              
 }
-/*.box:last-child {
-    margin-right: 0;
-}*/
 .box, .box:nth-child(2) {
     @include breakpoint(mediumScreen) {
         float: none;
@@ -147,5 +155,5 @@ display: inline-block;*/
     text-decoration: none;
 }
 .boxLink:hover, .boxIcon:focus {
-    opacity: 0.8;    
+    opacity: 0.8;
 }

@@ -37,7 +37,7 @@ FORM
     @include scale;
 }
 .button {
-    background-color: $purpley;
+    background-color: $midnight;
     color: $ghost;
     padding: 0 20px;
     margin: 10px auto 20px auto;
@@ -51,7 +51,7 @@ FORM
     text-decoration: none;     
 }
 .input:focus, .input:hover {
-    border: 1px solid $purpley;
+    border: 1px solid $midnight;
 }
 .input:focus, .input:hover, .button:focus, .button:hover {
     box-shadow: none;

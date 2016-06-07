@@ -17,17 +17,17 @@ TABLE
     text-overflow: ellipsis;    
 }
 .tableHeading {
-    border-bottom: 2px solid $purpley;
-    color: $purpley;
+    border-bottom: 2px solid $midnight;
+    color: $midnight;
 }
 .tableValue {
     border-bottom: 2px solid $cloud; 
 }
 
 .tableIcon {
-    color: $storm;
+    color: $midnight;
     @include transition;      
 }
 .tableIcon:hover, .tableIcon:focus {
-    opacity: 0.8;
+    opacity: 0.5;
 }
