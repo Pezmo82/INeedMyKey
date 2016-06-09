@@ -33,6 +33,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'recaptcha', require: 'recaptcha/rails'
 
+gem 'twilio-ruby'
+ 	
 # Use Unicorn as the app server
 # gem 'unicorn'
 
