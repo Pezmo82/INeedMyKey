@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-	devise_for :users
+  devise_for :users
+  resources :users do
+    member do
+      get :confirm_email
+    end
+  end
 	resources :keys, only: [:new, :create, :destroy, :show]
 	resources :storages, only: [:new, :edit, :update, :create]
 	resources :retrievals, only: [:new, :edit, :update, :create]
@@ -15,9 +20,9 @@ Rails.application.routes.draw do
 
     		namespace :locations do
     			resources :authorise, only: [:show, :new]
-				post "authorise/:id" => "authorise#authorise"
-			end
-  		end
+				  post "authorise/:id" => "authorise#authorise"
+			  end
+  	end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
