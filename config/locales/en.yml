@@ -20,7 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
- 	recaptcha:
-    	errors:
-			incorrect-captcha-sol: 'Fail'
-      
+  recaptcha:
+    errors:
+      incorrect-captcha-sol: 'Fail'
