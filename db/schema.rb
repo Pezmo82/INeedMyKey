@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160602150401) do
+ActiveRecord::Schema.define(version: 20160609164012) do
 
   create_table "keys", force: :cascade do |t|
     t.string   "name",        limit: 50,  null: false
@@ -53,9 +53,6 @@ ActiveRecord::Schema.define(version: 20160602150401) do
     t.boolean  "was_retrieved"
   end
 
-  add_index "retrievals", ["key_id"], name: "index_retrievals_on_key_id", using: :btree
-  add_index "retrievals", ["location_id"], name: "index_retrievals_on_location_id", using: :btree
-
   create_table "storages", force: :cascade do |t|
     t.integer  "key_id",        limit: 4
     t.integer  "location_id",   limit: 4
@@ -84,6 +81,8 @@ ActiveRecord::Schema.define(version: 20160602150401) do
     t.string   "registered_ip_address",  limit: 15,               null: false
     t.string   "mobile_number",          limit: 25,               null: false
     t.integer  "rank_id",                limit: 4,   default: 0,  null: false
+    t.boolean  "email_confirmed"
+    t.string   "confirm_token",          limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

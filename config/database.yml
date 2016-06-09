@@ -16,7 +16,6 @@ default: &default
   hostname: <%= ENV['INEEDMYKEY_DATABASE_HOST'] %>
 
 development:
-
   <<: *default
   username: <%= ENV['INEEDMYKEY_DATABASE_DEV_USERNAME'] %>
   password: <%= ENV['INEEDMYKEY_DATABASE_DEV_PASSWORD'] %>

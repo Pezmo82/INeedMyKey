@@ -2,6 +2,13 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :users do
+
+    member do
+      get :confirm_email
+    end
+  end
+
   resources :keys, only: [:new, :create, :destroy, :show]
 
   resources :storages, only: [:new, :edit, :update, :create]
