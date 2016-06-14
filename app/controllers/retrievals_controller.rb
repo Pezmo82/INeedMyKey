@@ -15,11 +15,18 @@ class RetrievalsController < ApplicationController
         @key.save
 
         if @retrieval.save
-        	flash['notice'] = "Retrieval information has been sent to you."
-          	redirect_to root_path
+
+        # send the user a text message
+        send_retrieval_sms(current_user.mobile_number, @storage, @key.auth_code)
+
+        # put a success flash message on the page and redirect
+        flash['notice'] = "Retrieval information has been sent to you."
+        redirect_to root_path
+        
         else
-          	flash['error'] = "Key retrieval has failed."
-          	render new
+            flash['error'] = "Key retrieval has failed."
+            render new
+
         end
 
     end
