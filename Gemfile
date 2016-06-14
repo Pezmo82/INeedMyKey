@@ -34,6 +34,8 @@ gem 'devise'
 gem 'recaptcha', require: 'recaptcha/rails'
 
 gem 'chartkick'
+
+gem 'braintree'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
