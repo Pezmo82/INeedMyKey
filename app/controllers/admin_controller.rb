@@ -4,6 +4,7 @@ class AdminController < ApplicationController
 
   	def index
  		@keys = Key.all
+ 		@locations = Location.all
  	end
 
 end
