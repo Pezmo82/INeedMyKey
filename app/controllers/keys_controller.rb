@@ -12,9 +12,13 @@ class KeysController < ApplicationController
     def create
         @key = current_user.keys.new(key_params)
 
+# Get payment details
+# Authorise payment or show failure
+# Log transaction 
+
         if @key.save
             flash[:notice] = 'Key added successfully'
-            redirect_to root_path
+            redirect_to payment_path
         else
             render :new
         end

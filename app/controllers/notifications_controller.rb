@@ -20,6 +20,7 @@ class NotificationsController < ApplicationController
 	  	end
 	  
 	  	flash[:success] = "Exception: #{e}. Administrators will be notified."
+
 		rescue
 	  		flash[:alert] = "Something when wrong."
 		end
@@ -49,5 +50,4 @@ class NotificationsController < ApplicationController
 		      	)
 		      	puts message.to
 		    end
-
 end

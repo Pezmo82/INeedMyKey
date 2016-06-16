@@ -1,5 +1,5 @@
-class OrdersController < ApplicationController
-	
+class PaymentController < ApplicationController
+
 	def new
 	  	@client_token = Braintree::ClientToken.generate
 	end
@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
 	  	nonce = params[:payment_method_nonce]
 	  	render action: :new and return unless nonce
 	  	result = Braintree::Transaction.sale(
-	    	amount: "1.00",
+	    	amount: "12.00",
 	    	payment_method_nonce: nonce
 	  	)
 

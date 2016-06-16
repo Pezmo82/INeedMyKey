@@ -1,0 +1,25 @@
+<h1 class="mainHeading">Payment</h1>
+    <hr class="faded" />
+
+		<div class="formWrapper">
+			<%= form_tag payment_path, method: "post" do %>
+			    <div id="dropin"></div>
+			        <input type="submit" value="Pay" class="button">
+			<% end %>
+			    		
+			    <%= @params %> <!-- We'll remove this later, just testing now -->
+		</div>
+
+<script type="text/javascript">
+    function setupBT() {
+        braintree.setup("<%=@client_token%>", 'dropin', {
+            container: 'dropin'
+        });
+    }
+  
+    if (window.addEventListener)
+        window.addEventListener("load", setupBT, false);
+    else if (window.attachEvent)
+        window.attachEvent("onload", setupBT);
+    else window.onload = setupBT;
+</script>
