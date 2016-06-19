@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 	resources :retrievals, only: [:new, :edit, :update, :create]
 	resources :comments, only: [:new, :create, :delete, :show]
 	resources :admin, only: [:index]
-	
+
 		namespace :admin do
 			resources :users, only: [:index, :edit, :update, :destroy, :delete]
 			resources :keys, only: [:index, :edit, :update]
@@ -33,6 +33,9 @@ Rails.application.routes.draw do
 	get "contact" => "static_pages#contact"
 	get "account" => "users#account"
   get "payment" => "payment#new"
+
+  get "account/change/email" => "users#change_email"
+  post "account/change/email" => "users#change_email"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
