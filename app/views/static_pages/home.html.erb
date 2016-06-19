@@ -13,17 +13,21 @@
 						<p class="boxText">Add a new key to your account.</p>
 			<% end %>
 
-			<%= link_to new_storage_path, class: [:box, :boxLink] do %>
-				<h3 class="boxHeading">Store</h3>
-					<i class="boxIcon fa fa-5x fa-home"></i>
-						<p class="boxText">Store your key.</p>
+			<% if current_user.keys.count > 0 %>
+				<%= link_to new_storage_path, class: [:box, :boxLink] do %>
+					<h3 class="boxHeading">Store</h3>
+						<i class="boxIcon fa fa-5x fa-home"></i>
+							<p class="boxText">Store your key.</p>
+				<% end %>
 			<% end %>
 
-			<%= link_to new_retrieval_path, class: [:box, :boxLink] do %>
-				<h3 class="boxHeading">Retreive</h3>
-					<i class="boxIcon fa fa-5x fa-exchange"></i>
-						<p class="boxText">Request a key retreival.</p>
-			<% end %>
+			<% if current_user.keys.count > 0 %>
+				<%= link_to new_retrieval_path, class: [:box, :boxLink] do %>
+					<h3 class="boxHeading">Retreive</h3>
+						<i class="boxIcon fa fa-5x fa-exchange"></i>
+							<p class="boxText">Request a key retreival.</p>
+				<% end %>
+			<% end %>	
 		</div>
 
 			<p>
@@ -32,13 +36,14 @@
 				<% end %>
 			</p>
 
-
+		<% if current_user.keys.count > 0 %>
 			<table class="table">
 					<tr>
 						<th class="tableHeading">Key Name</th>
 						<th class="tableHeading">Added</th>
 						<th class="tableHeading">Status</th>
 					</tr>
+
 				<% current_user.keys.each do | key | %>
 					<tr>
 						<td class="tableValue"><%= key.name %></td>
@@ -52,11 +57,12 @@
 						</td>
 					</tr>
 				<% end %>
-				<tr><td><p><p></td></tr>
+
 				<tr>
 					<td>Total Keys: <%= current_user.keys.count() %></td>
 				</tr>
 			</table>
+		<% end %>
 
 	<% else %>
 
