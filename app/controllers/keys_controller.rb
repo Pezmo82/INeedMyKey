@@ -12,10 +12,6 @@ class KeysController < ApplicationController
     def create
         @key = current_user.keys.new(key_params)
 
-# Get payment details
-# Authorise payment or show failure
-# Log transaction 
-
         if @key.save
             flash[:notice] = 'Key added successfully'
             redirect_to payment_path
@@ -27,10 +23,9 @@ class KeysController < ApplicationController
     def delete
     end
 
-    private
-
-        def key_params
-            params.require(:key).permit(:name)
-        end
-
+        private
+            def key_params
+                params.require(:key).permit(:name)
+            end
+            
 end
