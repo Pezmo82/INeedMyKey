@@ -33,7 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'chartkick'
-gem 'braintree'
+# gem 'braintree' -- Causes error when starting rails server
 gem 'twilio-ruby'
 
 # Use Unicorn as the app server
@@ -54,4 +54,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
