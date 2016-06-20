@@ -22,7 +22,7 @@ class NotificationsController < ApplicationController
 	  	flash[:success] = "Exception: #{e}. Administrators will be notified."
 
 		rescue
-	  		flash[:alert] = "Something when wrong."
+	  		flash[:alert] = "Something went wrong."
 		end
 
 		redirect_to '/'
