@@ -13,13 +13,15 @@
 						<p class="boxText">Add a new key to your account.</p>
 			<% end %>
 
-			<% if current_user.keys.count > 0 %>
+			<% if current_user.keys.where(:location_id => nil).count > 0 %>
 				<%= link_to new_storage_path, class: [:box, :boxLink] do %>
 					<h3 class="boxHeading">Store</h3>
 						<i class="boxIcon fa fa-5x fa-home"></i>
 							<p class="boxText">Store your key.</p>
 				<% end %>
+			<% end %>
 
+			<% if current_user.keys.where.not(:location_id => nil).count > 0 %>
 				<%= link_to new_retrieval_path, class: [:box, :boxLink] do %>
 					<h3 class="boxHeading">Retreive</h3>
 						<i class="boxIcon fa fa-5x fa-exchange"></i>
@@ -40,6 +42,7 @@
 						<th class="tableHeading">Key Name</th>
 						<th class="tableHeading">Added</th>
 						<th class="tableHeading">Status</th>
+						<th class="tableHeading">Delete Key</th>
 					</tr>
 
 				<% current_user.keys.each do | key | %>
@@ -51,6 +54,14 @@
 								Stored
 							<% else %>
 								Not Stored
+							<% end %>
+						</td>
+
+						<td class="tableValue">
+							<% if !Storage.find_by(key_id: key.id).try(:is_stored) || Storage.find_by(key_id: key.id).try(:was_retrieved) %>
+							    <%= link_to key_path(key.id), method: :delete, data: { confirm: "Are you sure you want to delete this key?" } do %>
+                    					<i class="tableIcon fa fa-2x fa-trash"></i>
+                    			<% end %>
 							<% end %>
 						</td>
 					</tr>

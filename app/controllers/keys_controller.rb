@@ -20,7 +20,10 @@ class KeysController < ApplicationController
         end
     end
 
-    def delete
+    def destroy
+        Key.find(params[:id]).destroy
+        flash[:success] = "Key Deleted."
+        redirect_to root_path
     end
 
         private
