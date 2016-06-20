@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   get "payment" => "payment#new"
 
   get "account/change/email" => "users#change_email"
-  post "account/change/email" => "users#change_email"
+  post "account/change/email" => "users#change_email_do"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
