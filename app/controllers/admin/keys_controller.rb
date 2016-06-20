@@ -4,8 +4,9 @@ class Admin::KeysController < ApplicationController
   	before_action :check_rank
 
   	def index
-    	@Keys = Key.all
-  	end
+        @Keys = Key.all
+        @Locations = Location.all
+    end
 
     def edit
         @key = Key.find(params[:id])

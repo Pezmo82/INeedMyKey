@@ -24,5 +24,5 @@
 </div>
 
 <div class="graphWrapper">
-    <%= column_chart @locations.group(:capacity).count, library: {hAxis: {title: "Locations"}, vAxis: {title: "Number of Keys"}, title: "Capacity Of Locations"} %>
+    <%= column_chart @keys.joins(:location).group(:'locations.name').count, library: {hAxis: {title: "Locations"}, vAxis: {title: "Number of Keys"}, title: "Number of Keys to Locations"} %>
 </div>
