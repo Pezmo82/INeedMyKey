@@ -17,11 +17,15 @@ Rails.application.routes.draw do
 			resources :keys, only: [:index, :edit, :update]
 			resources :locations, only: [:show, :new, :create, :index, :destroy, :update, :edit]
 			resources :storages, only: [:new, :edit, :update, :create]
-
+      
     		namespace :locations do
     			resources :authorise, only: [:show, :new]
 				  post "authorise/:id" => "authorise#authorise"
 			  end
+        namespace :locations do
+          resources :retrieval_authorise, only: [:show, :new]
+          post "retrieval_authorise/:id" => "retrieval_authorise#retrieval_authorise"
+        end
   	end
 
   # The priority is based upon order of creation: first created -> highest priority.

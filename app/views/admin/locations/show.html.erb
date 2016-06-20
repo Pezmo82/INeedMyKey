@@ -7,7 +7,7 @@
             <i class="boxIcon fa fa-5x fa-plus"></i>
                 <p class="boxText">Authorise a pending key storage</p>
     <% end %>
-    <%= link_to admin_locations_authorise_path(params[:id]), class: [:box, :boxLink] do %>
+    <%= link_to admin_locations_retrieval_authorise_path(params[:id]), class: [:box, :boxLink] do %>
         <h3 class="boxHeading">Authorise Key Retreival</h3>
             <i class="boxIcon fa fa-5x fa-minus"></i>
                 <p class="boxText">Authorise a pending key retreival</p>
@@ -52,30 +52,6 @@
 
   </table>
 
-  <table class="table">
 
-    <tr>
-
-      <th>Key ID</th>
-      <th>Retrieval Status</th>
-      <th>Date </th>
-
-    </tr>
-
-      <% @retreivals.each do | retreive | %>
-
-        <tr>
-
-          <td class="tableValue"> <%= storage.key_id %> </td>
-
-          <td class="tableValue"> <% if storage.is_stored %> Stored <% else %> Awaiting retreival<% end %> </td>
-
-          <td class="tableValue"> <%= storage.updated_at %> </td>
-
-        </tr>
-
-      <% end %>
-
-  </table>
 
 <% end %>

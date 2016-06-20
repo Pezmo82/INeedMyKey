@@ -35,7 +35,7 @@ module ApplicationHelper
 	    send_sms(to, body)
 	end
 
-	def send_retrieval_sms(to, storage, retrieval_code)
+	def send_retrieval_sms(to, storage, key_auth_code)
 		
 		location = storage.location
 		

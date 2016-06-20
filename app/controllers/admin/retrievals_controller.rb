@@ -25,7 +25,7 @@ class Admin::RetrievalsController < ApplicationController
         private
 
             def retrieval_params
-                params.require(:retrieval).permit(:location_id)
+                params.require(:retrieval).permit(:location_id,:was_retrieved)
             end
 end
 

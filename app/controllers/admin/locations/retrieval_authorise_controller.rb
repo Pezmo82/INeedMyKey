@@ -1,4 +1,4 @@
-class Admin::Locations::AuthoriseRetrievalsController < ApplicationController
+class Admin::Locations::RetrievalAuthoriseController < ApplicationController
 
     def new
         @authorise_retrievals = Authorise.new
@@ -7,19 +7,24 @@ class Admin::Locations::AuthoriseRetrievalsController < ApplicationController
     def show
     end
 
-    def authorise_retrievals
+    def retrieval_authorise
         @location = Location.find(params[:id])
-        @keys = Key.where("location_id = :location_id", {location_id: params[:id]})
+        @keys = Key.where("auth_code = :auth_code", {auth_code: params[admin_locations_retrieval_authorise_path][:authcode]})
 
         @keys.each do | key |
-            if key.auth_code = params[admin_locations_authorise_path][:authcode]
+            if key.auth_code = params[admin_locations_retrieval_authorise_path][:authcode]
                 @storage = Storage.where("key_id = :key_id AND location_id = :location_id", {key_id: key.id, location_id: params[:id]}).order(is_stored: :asc).first
                 @storage.is_stored = false
                 @storage.was_retrieved = true
-                @retrieval.location_id = nil
+                @retrieval = Retrieval.where("key_id = :key_id AND location_id = :location_id", {key_id: key.id, location_id: params[:id]}).order(was_retrieved: :asc).first
                 @retrieval.was_retrieved = true
                 key.auth_code = nil
+                key.location_id = nil
                 key.save
+                @storage.save
+                @retrieval.save
+
+                flash[:alert] = "key #{key.id}"
 
             else
                 flash[:alert] = "Something went wrong"
