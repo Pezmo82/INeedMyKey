@@ -3,7 +3,7 @@
 
 <div class="boxWrapper group">
 
-	<%= link_to user_password_path(email: current_user.email), method: :post, class: [:box, :boxLink] do %>
+	<%= link_to edit_user_registration_path, class: [:box, :boxLink] do %>
 		<h3 class="boxHeading">Change Password</h3>
 			<i class="boxIcon fa fa-5x fa-user-secret"></i>
 				<p class="boxText">Send password reset instructions.</p>
