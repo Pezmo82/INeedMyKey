@@ -19,6 +19,9 @@ class RetrievalsController < ApplicationController
         @retrieval.key_id = @key.id
         @retrieval.location_id = @key.location_id
         @retrieval.was_retrieved = false
+        @storage.is_stored = false
+        @storage.to_collect = true
+        @storage.save
         @key.auth_code = generateAuthcode
         @key.save
 

@@ -14,7 +14,7 @@ class Admin::Locations::RetrievalAuthoriseController < ApplicationController
         @keys.each do | key |
             if key.auth_code = params[admin_locations_retrieval_authorise_path][:authcode]
                 @storage = Storage.where("key_id = :key_id AND location_id = :location_id", {key_id: key.id, location_id: params[:id]}).order(is_stored: :asc).first
-                @storage.is_stored = false
+                @storage.to_collect = false
                 @storage.was_retrieved = true
                 @retrieval = Retrieval.where("key_id = :key_id AND location_id = :location_id", {key_id: key.id, location_id: params[:id]}).order(was_retrieved: :asc).first
                 @retrieval.was_retrieved = true

@@ -9,6 +9,7 @@ class Admin::UsersController < ApplicationController
 
 	def edit
 		@user = User.find(params[:id])
+		@Ranks = Rank.all
 	end
 
 	def update

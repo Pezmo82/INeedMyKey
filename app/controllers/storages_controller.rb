@@ -11,6 +11,7 @@ class StoragesController < ApplicationController
         @storage.location_id = location_id
         @key = Key.find_by id: params[:storage][:key_id]
         @storage.key_id = @key.id
+        @storage.to_drop = true
         @key.auth_code = generateAuthcode
         @key.location_id = location_id
         @key.save
