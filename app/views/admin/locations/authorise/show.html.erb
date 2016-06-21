@@ -1,7 +1,18 @@
-<%= form_for admin_locations_authorise_path do |f| %>
+<h1 class="mainHeading">Change Email Address</h1>
+    <hr class="faded" />
 
-  <%= f.label "Authorisation Code" %>
-  <%= f.text_field "authcode", autofocus: true, required: true, class: :input %>
-  <%= f.submit "Submit", type: :submit, class: :button %>
+<div class="formWrapper">
+	<%= form_for admin_locations_authorise_path do |f| %>
 
-<% end %>
+		<div class="field">
+			<%= f.label "Authorisation Code" %>
+				<%= f.text_field "authcode", autofocus: true, required: true, class: :input %>
+		</div>
+
+        <div class="actions">
+	  		<%= f.submit "Submit", type: :submit, class: :button %>
+        </div>
+    <% end %>
+
+    <%= link_to "Back", :back, class: :formLink %>
+</div>
