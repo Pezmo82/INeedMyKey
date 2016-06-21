@@ -7,8 +7,6 @@ class Key < ActiveRecord::Base
   	def get_state
   		storage = self.storages.first
 
-  		logger.debug storage.is_stored
-
   		if !storage
   			return "Unstored"
   		elsif storage.to_drop
