@@ -50,10 +50,14 @@
 						<td class="tableValue"><%= key.name %></td>
 						<td class="tableValue"><%= key.created_at.strftime("%d %b %Y - %H:%M") %></td>
 						<td class="tableValue">
-							<% if Storage.find_by(key_id: key.id).try(:is_stored) %>
-								Stored
+							<% if Storage.find_by(key_id: key.id, :is_stored => nil) %>
+								Key is stored
+							<% elsif Storage.find_by(key_id: key.id, :is_collect => nil) %>
+								Collect key from location
+							<% elsif Storage.find_by(key_id: key.id, :is_drop => nil) %>
+								Take key to location
 							<% else %>
-								Not Stored
+								Key is not stored
 							<% end %>
 						</td>
 
