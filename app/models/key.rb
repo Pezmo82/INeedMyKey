@@ -18,7 +18,7 @@ class Key < ActiveRecord::Base
   		elsif storage.was_retrieved
   			return "Retrieved"
   		else 
-  			return "unknown"
+  			return "Unknown"
   		end
 
   	end
