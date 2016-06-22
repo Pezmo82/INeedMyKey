@@ -7,6 +7,10 @@ class Admin::StoragesController < ApplicationController
         @Storages = Storages.all
     end
 
+    def show
+        @Locations = Locations.all
+    end
+
     def edit
         key = Key.find(params[:id])
         @storage = (Storage.find_by key_id: key.id)  

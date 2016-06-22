@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621165743) do
+ActiveRecord::Schema.define(version: 20160622093656) do
 
   create_table "keys", force: :cascade do |t|
     t.string   "name",        limit: 50,  null: false
@@ -47,21 +47,22 @@ ActiveRecord::Schema.define(version: 20160621165743) do
   create_table "retrievals", force: :cascade do |t|
     t.integer  "key_id",        limit: 4
     t.integer  "location_id",   limit: 4
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.boolean  "is_stored"
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.boolean  "to_collect",              default: false, null: false
     t.boolean  "was_retrieved"
+    t.integer  "last_location", limit: 4
   end
 
   create_table "storages", force: :cascade do |t|
     t.integer  "key_id",        limit: 4
     t.integer  "location_id",   limit: 4
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.boolean  "is_stored"
-    t.boolean  "was_retrieved"
-    t.boolean  "to_drop"
-    t.boolean  "to_collect"
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.boolean  "is_stored",               default: false, null: false
+    t.boolean  "was_retrieved",           default: false, null: false
+    t.boolean  "to_drop",                 default: false, null: false
+    t.boolean  "to_collect",              default: false, null: false
   end
 
   add_index "storages", ["key_id"], name: "index_storages_on_key_id", using: :btree

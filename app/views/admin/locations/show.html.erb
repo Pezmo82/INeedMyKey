@@ -14,14 +14,7 @@
     <% end %>
 </div>
 
-	<p>
-        <% flash.each do |flash_key, flash_value| %>
-            <div class="alert">
-                <%= flash_key %><%= flash_value %>
-            </div>
-	    <% end %>
-	</p>
-
+<br />
     <%= link_to "Back", :back, class: :formLink %><br />
 
 <% if @storages.blank? %>
@@ -47,11 +40,7 @@
                     <%= storage.key_id %>
                 </td>
                 <td class="tableValue">
-                    <% if storage.is_stored %> 
-                        Stored
-                    <% else %>
-                        Awaiting key
-                    <% end %> 
+                    <%= storage.key.get_state %>
                 </td>
                 <td class="tableValue"> 
                     <%= storage.updated_at %> 
