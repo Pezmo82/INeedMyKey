@@ -15,43 +15,49 @@
 </div>
 
 	<p>
-	    <% flash.each do |flash_key, flash_value| %>
-	      <div class="alert"><%= flash_key %><%= flash_value %></div>
+        <% flash.each do |flash_key, flash_value| %>
+            <div class="alert">
+                <%= flash_key %><%= flash_value %>
+            </div>
 	    <% end %>
 	</p>
 
-<% if @storages.blank? %>
+    <%= link_to "Back", :back, class: :formLink %><br />
 
+<% if @storages.blank? %>
 	<h3>There are no keys stored.</h3>
 
 <% else %>
 
-  <table class="table">
-
-    <tr>
-
-      <th>Key ID</th>
-      <th>Storage Status</th>
-      <th>Date </th>
-
-    </tr>
-
-      <% @storages.each do | storage | %>
-
-        <tr>
-
-          <td class="tableValue"> <%= storage.key_id %> </td>
-
-          <td class="tableValue"> <% if storage.is_stored %> Stored <% else %> Awaiting key<% end %> </td>
-
-          <td class="tableValue"> <%= storage.updated_at %> </td>
-
-        </tr>
-
-      <% end %>
-
-  </table>
-
-
+    <table class="table">
+            <tr>
+                <th class="tableHeading">
+                    Key ID
+                </th>
+                <th class="tableHeading">
+                    Storage Status
+                </th>
+                <th class="tableHeading">
+                    Date
+                </th>
+            </tr>
+        <% @storages.each do | storage | %>
+            <tr>
+                <td class="tableValue"> 
+                    <%= storage.key_id %>
+                </td>
+                <td class="tableValue">
+                    <% if storage.is_stored %> 
+                        Stored
+                    <% else %>
+                        Awaiting key
+                    <% end %> 
+                </td>
+                <td class="tableValue"> 
+                    <%= storage.updated_at %> 
+                </td>
+            </tr>
+        <% end %>
+    </table>
 
 <% end %>

@@ -9,7 +9,6 @@ class Admin::StoragesController < ApplicationController
 
     def edit
         key = Key.find(params[:id])
-
         @storage = (Storage.find_by key_id: key.id)  
     end
 

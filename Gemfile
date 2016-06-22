@@ -34,7 +34,7 @@ gem 'devise'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'chartkick'
 gem 'groupdate'
-# gem 'braintree' -- Causes error when starting rails server
+gem 'braintree'
 gem 'twilio-ruby'
 
 # Use Unicorn as the app server

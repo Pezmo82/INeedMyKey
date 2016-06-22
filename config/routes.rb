@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 
 	get "contact" => "static_pages#contact"
 	get "account" => "users#account"
-  get "payment" => "payment#new"
+  get "payment" => "payments#new"
 
   get "account/change/email" => "users#change_email"
   post "account/change/email" => "users#change_email_do"
