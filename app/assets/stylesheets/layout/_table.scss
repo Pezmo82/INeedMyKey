@@ -2,7 +2,6 @@
 TABLE
 ********************/
 .table {
-    width: $hundred;
     margin: 40px 0;
     table-layout: fixed;   
 }
@@ -14,7 +13,7 @@ TABLE
     vertical-align: top;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;    
+    text-overflow: ellipsis; 
 }
 .tableHeading {
     border-bottom: 2px solid $purpley;
