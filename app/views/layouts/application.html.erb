@@ -22,30 +22,57 @@
 					<div class="logo"></div>
 				<% end %>
 
-				<i class="fa fa-bars fa-3x menuIcon" onClick=""></i>
+				<i class="fa fa-bars fa-3x menuIcon hideIcon" onClick=""></i>
 
                 <div class="menu">
-					<% if !user_signed_in? || user_signed_in? && current_user.rank_id < 1 %>
-						<%= link_to "Home", root_path, class: :navLink %>
-						<%= link_to "Contact", contact_path, class: :navLink %>
+  					<% if !user_signed_in? || user_signed_in? && current_user.rank_id < 1 %>
+						<% if !current_page?(root_path) %>
+							<%= link_to "Home", root_path, class: :navLink %>
+						<% end %>
 					<% end %>
 
 					<% if !user_signed_in? %>
-						<%= link_to "Sign Up", new_user_registration_path, class: :navLink %>
-						<%= link_to "Log In", new_user_session_path, class: :navLink %>
+						<% if !current_page?(new_user_registration_path) %>
+							<%= link_to "Sign Up", new_user_registration_path, class: :navLink %>
+						<% end %>
+
+						<% if !current_page?(new_user_session_path) %>
+							<%= link_to "Log In", new_user_session_path, class: :navLink %>
+						<% end %>
 					<% end %>
 
 					<% if user_signed_in? && current_user.rank_id < 1 %>
-						<%= link_to "Account", account_path, class: :navLink %>
+						<% if !current_page?(account_path) %>
+							<%= link_to "Account", account_path, class: :navLink %>
+						<% end %>
 					<% end %>
 					
 					<% if user_signed_in? && current_user.rank_id > 0 %>
-						<%= link_to "Admin", admin_index_path, class: :navLink %>
+						<% if !current_page?(admin_index_path) %>
+							<%= link_to "Admin", admin_index_path, class: :navLink %>
+						<% end %>	
 					<% end %>
 
 					<% if user_signed_in? %>
-						<%= link_to "Log Out", destroy_user_session_path, method: :delete, class: :navLink %>
+						<% if !current_page?(destroy_user_session_path) %>
+							<%= link_to "Log Out", destroy_user_session_path, method: :delete, class: :navLink %>
+						<% end %>
 					<% end %>
+					
+					<a href="https://facebook.com" target="_blank">
+						<span class="fa-stack fa-lg menuIcon">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-facebook fa-stack-1x"></i>
+						</span>
+					</a>
+
+					<a href="https://twitter.com" target="_blank">
+						<span class="fa-stack fa-lg menuIcon twitter">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-twitter fa-stack-1x"></i>
+						</span>
+					</a>					
+
                 </div>
             </div>
         </div>
