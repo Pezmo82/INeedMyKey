@@ -1,20 +1,20 @@
 <h1 class="mainHeading">Key Storage</h1>
     <hr class="faded" />
 
-        <%= link_to "Back", :back, class: :formLink %>
- 	<br>
-
-
 <div class="formWrapper">
-
-	<h2>Please choose the key you wish to store</h2>
-
 	<%= form_for @storage do |f| %>
 
-		<%= f.collection_select :key_id, @keys, :id, :name %>
+		<div class="field">
+			<%= f.label "Choose a key", class: :label %>
+				<%= f.collection_select :key_id, @keys, :id, :name %>
+		</div>
 
-		<%= f.button "Store Key", type: :submit, method: :patch, class: :button %>
+        <div class="actions">
+			<%= f.button "Store Key", type: :submit, method: :patch, class: :button %>
+		</div>
 
 	<% end %>
+
+	<%= link_to "Back", :back, class: :formLink %>
 
 </div>

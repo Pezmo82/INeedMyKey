@@ -1,7 +1,7 @@
 <h1 class="mainHeading">Current Keys</h1>
     <hr class="faded" />
 
-        <%= link_to "Back", :back, class: :formLink %>
+<%= link_to "Back", :back, class: [:button, :back] %>
 
 <table class="table">
         <tr>
@@ -9,6 +9,8 @@
             <th class="tableHeading">Key Name</th>
             <th class="tableHeading">User ID</th>
             <th class="tableHeading">Email</th>
+            <th class="tableHeading">Status</th>
+            <th class="tableHeading">Location</th>
             <th class="tableHeading">Change Location?</th>
         </tr>
     <% @Keys.each do | key | %>
@@ -17,6 +19,8 @@
             <td class="tableValue"><%= key.name %></td>
             <td class="tableValue"><%= key.user_id %></td>
             <td class="tableValue"><%= key.user.email %></td>
+            <td class="tableValue"><%= key.get_state %></td>
+            <td class="tableValue"><%=  %></td>
             <td class="tableValue">
                 <% if key.get_state == "Key is stored" %>
                     <%= link_to edit_admin_storage_path(key.id) do %>

@@ -3,8 +3,10 @@
 
 		<div class="formWrapper">
 			<%= form_tag payment_path, method: "post" do %>
+
 			    <div id="dropin"></div>
 			        <input type="submit" value="Pay" class="button">
+                    
 			<% end %>
 			    		
 			    <%= @params %> <!-- We'll remove this later, just testing now -->

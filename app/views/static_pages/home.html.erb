@@ -1,9 +1,6 @@
 <h1 class="mainHeading"> <% if user_signed_in? %> Hello <%= current_user.email[/[^@]+/] %> | <% end %> Need Your Key?</h1>
 	<hr class="faded" />
 
-		<p class="mainText">Fed up of losing your keys and not having access to a spare? We have a solution!</p>
-		<p class="mainText">Follow our simple three stage process and never worry about this again.</p>
-
 	<% if user_signed_in? %>
 
 		<div class="boxWrapper group">
@@ -30,32 +27,23 @@
 			<% end %>
 		</div>
 
-			<p>
-				<% flash.each do |key, value| %>
-					<div class="alert alert-<%= key %>"><%= value %></div>
-				<% end %>
-			</p>
+	<p><% flash.each do |key, value| %>
+		<div class="alert alert-<%= key %>"><%= value %></div>
+	<% end %></p>
 
 		<% if current_user.keys.count > 0 %>
 			<table class="table">
-					<tr>
-						<td>Total Keys: <%= current_user.keys.count() %></td>
-					</tr>
 					<tr>
 						<th class="tableHeading">Key Name</th>
 						<th class="tableHeading">Added</th>
 						<th class="tableHeading">Status</th>
 						<th class="tableHeading">Delete Key</th>
 					</tr>
-
 				<% current_user.keys.each do | key | %>
 					<tr>
 						<td class="tableValue"><%= key.name %></td>
 						<td class="tableValue"><%= key.created_at.strftime("%d %b %Y - %H:%M") %></td>
-						<td class="tableValue">
-							<%= key.get_state %>
-						</td>
-
+						<td class="tableValue"><%= key.get_state %></td>
 						<td class="tableValue">
 							<% if key.get_state == "Retrieved" || key.get_state == "Unstored" || key.get_state == "Unknown" %>
 							    <%= link_to key_path(key.id), method: :delete, data: { confirm: "Are you sure you want to delete this key?" } do %>
@@ -65,7 +53,6 @@
 						</td>
 					</tr>
 				<% end %>
-
 			</table>
 		<% end %>
 

@@ -9,13 +9,11 @@
     <% end %>
 </div>
 
-    <p>
-        <% flash.each do |key, value| %>
-            <div class="alert alert-<%= key %>"><%= value %></div>
-        <% end %>
-    </p>
+    <p><% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %></p>
 
-<%= link_to "Back", :back, class: :formLink %>
+<%= link_to "Back", :back, class: [:button, :back] %>
 
 <table class="table">
         <tr>

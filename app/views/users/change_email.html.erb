@@ -3,6 +3,7 @@
 
 <div class="formWrapper">
 	<%= form_for account_change_email_path do |f| %>
+
 		<div class="field">
 			<%= f.label :current_email_address, class: :label %>
 				<%= f.text_field :current_email, autofocus: true, required: true, class: :input %>
@@ -21,7 +22,9 @@
         <div class="actions">
 	  		<%= f.submit "Submit", type: :submit, class: :button %>
         </div>
+        
     <% end %>
 
     <%= link_to "Back", :back, class: :formLink %>
+
 </div>

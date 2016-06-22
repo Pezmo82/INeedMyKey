@@ -5,7 +5,7 @@
     <%= form_for [:admin, @user] do |f| %>
     
         <div class="field">
-            <%= f.label :rank_id, class: :label %><br />
+            <%= f.label :rank_id, class: :label %>
                 <%= f.collection_select :rank_id, @Ranks, :id, :name, class: :input %>
         </div>
 
@@ -15,4 +15,5 @@
     <% end %>
     
     <%= link_to "Back", :back, class: :formLink %>
+    
 </div>
