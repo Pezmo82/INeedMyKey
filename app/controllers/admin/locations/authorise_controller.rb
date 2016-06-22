@@ -13,7 +13,7 @@ class Admin::Locations::AuthoriseController < ApplicationController
 
 		@keys.each do | key |
 			if key.auth_code = params[admin_locations_authorise_path][:authcode]
-	    		@storage = Storage.where("key_id = :key_id AND location_id = :location_id", {key_id: key.id, location_id: params[:id]}).order(is_stored: :asc).first
+	    		@storage = @key.storages.first
 	    		@storage.to_drop = false
 	    		@storage.is_stored = true
 	    		key.auth_code = nil

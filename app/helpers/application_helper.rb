@@ -6,8 +6,8 @@ module ApplicationHelper
 
 		number = current_user.mobile_number
 
-		account_sid = 'ACf383540749375aadf02ddee8c9d0f495' 
-		auth_token = '31af4f8fde47b325fae3818711063f54' 
+		account_sid = ENV['TWILIO_ACCOUNT_SID']
+		auth_token = ENV['TWILIO_AUTH_TOKEN']
 
 		@client = Twilio::REST::Client.new account_sid, auth_token 
 

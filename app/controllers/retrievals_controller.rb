@@ -16,8 +16,10 @@ class RetrievalsController < ApplicationController
         @retrieval = Retrieval.new
         location_id = find_location
         @key = Key.find_by id: params[:retrieval][:key_id]
+        @storage = @key.storages.first
         @retrieval.key_id = @key.id
         @retrieval.location_id = @key.location_id
+        @retrieval.to_collect = true
         @retrieval.was_retrieved = false
         @storage.is_stored = false
         @storage.to_collect = true
