@@ -14,11 +14,11 @@ FORM
     display: inline-block;
     margin-bottom: 5px;
 }
-.input {
+.input, select {
     width: $hundred;
     border: 1px solid $cloud;        
 }
-.input, .button { /* button input select checkbox etc */
+.input, select, .button { /* button input select checkbox etc */
     height: 30px;
     font-size: $normal;      
     cursor: pointer; 
@@ -28,7 +28,7 @@ FORM
     -webkit-border-radius: none;
     border-radius: 0;   
 }
-.input, .button, .formLink {
+.input, select, .button, .formLink {
     @include transition;    
 }
 .checkBox {
@@ -50,13 +50,20 @@ FORM
     clear: both;
     text-decoration: none;     
 }
-.input:focus, .input:hover {
+.input:focus, .input:hover,
+select:focus, select:hover {
     border: 1px solid $purpley;
 }
-.input:focus, .input:hover, .button:focus, .button:hover {
+.input:focus, .input:hover,
+select:focus, select:hover, 
+.button:focus, .button:hover {
     box-shadow: none;
 }
-.button:focus, .button:hover, .formLink:focus, .formLink:hover {
+select {
+    padding: 0 20px;
+}
+.button:focus, .button:hover, 
+.formLink:focus, .formLink:hover {
 	color: $lilac;
     @include transition;
 }
