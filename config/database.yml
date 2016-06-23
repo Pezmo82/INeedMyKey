@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: IneedMyKey_production
-  username: IneedMyKey
+  database: key_production
+  username: key
   password: <%= ENV['INEEDMYKEY_DATABASE_PASSWORD'] %>
