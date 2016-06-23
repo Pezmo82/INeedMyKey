@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160622093656) do
+ActiveRecord::Schema.define(version: 20160623175628) do
 
   create_table "keys", force: :cascade do |t|
     t.string   "name",        limit: 50,  null: false
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 20160622093656) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
-    t.string   "registered_ip_address",  limit: 15,                  null: false
+    t.string   "registered_ip_address",  limit: 15
     t.string   "mobile_number",          limit: 25,                  null: false
     t.integer  "rank_id",                limit: 4,   default: 0,     null: false
     t.boolean  "email_confirmed",                    default: false
