@@ -2,9 +2,6 @@ class KeysController < ApplicationController
 
     before_action :authenticate_user!
 
-    def show
-    end
-
     def new
         @key = Key.new
     end
