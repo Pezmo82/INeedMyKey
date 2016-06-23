@@ -5,6 +5,7 @@ class Admin::StoragesController < ApplicationController
 
     def index
         @Storages = Storages.all
+        @Locations = Locations.all
     end
 
     def show
@@ -12,14 +13,18 @@ class Admin::StoragesController < ApplicationController
     end
 
     def edit
-        key = Key.find(params[:id])
-        @storage = (Storage.find_by key_id: key.id)  
+        @storage = Storage.find(params[:id])
+        @key = @storage.key
+        @location = @storage.location
     end
 
     def update
         @storage = Storage.find(params[:id])
         
         if @storage.update_attributes(storage_params)
+            @storage.key.location_id = @storage.location_id
+            @storage.key.save
+
             flash[:notice] = "Key Location Updated."
             redirect_to admin_keys_path
         end
@@ -29,6 +34,10 @@ class Admin::StoragesController < ApplicationController
 
             def storage_params
                 params.require(:storage).permit(:location_id)
+            end
+
+            def location_params
+                params.require(:location).permit(:location_id)
             end
 end
 

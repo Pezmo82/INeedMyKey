@@ -8,6 +8,10 @@ class Admin::KeysController < ApplicationController
         @Locations = Location.all
     end
 
+    def show
+        @Locations = Location.find(params[:id])
+    end
+
     def edit
         @key = Key.find(params[:id])
     end
