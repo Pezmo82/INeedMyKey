@@ -36,10 +36,10 @@ class UsersController < ApplicationController
 
 	def change_mobile_do
 		new_mobile = params[account_change_mobile_path][:new_mobile]
-		new_mobile_repeat = params[account_change_mobile_path][:new_mobile_repeat]
+		mobile_number_confirmation = params[account_change_mobile_path][:mobile_number_confirmation]
 
 		if params[account_change_mobile_path][:current_mobile] == current_user.mobile_number
-			if new_mobile == new_mobile_repeat
+			if new_mobile == mobile_number_confirmation
 				current_user.mobile_number = new_mobile
 
 				if current_user.save
