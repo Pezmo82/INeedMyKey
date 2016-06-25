@@ -1,4 +1,4 @@
-<h1 class="mainHeading"> <% if user_signed_in? %> Hello <%= current_user.email[/[^@]+/] %> | <% end %> Need Your Key?</h1>
+<h1 class="mainHeading">Need Your Key?</h1>
 	<hr class="faded" />
 
 	<% if user_signed_in? %>
@@ -22,7 +22,7 @@
 				<%= link_to new_retrieval_path, class: [:box, :boxLink] do %>
 					<h3 class="boxHeading">Retrieve</h3>
 						<i class="boxIcon fa fa-5x fa-exchange"></i>
-							<p class="boxText">Request a key retreival.</p>
+							<p class="boxText">Request a key retrieval.</p>
 				<% end %>
 			<% end %>
 		</div>
