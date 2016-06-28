@@ -22,7 +22,7 @@
             <td class="tableValue"><%= key.get_state %></td>
             <td class="tableValue"><%= key.storages.last == nil ? "" : key.storages.last.location.name%></td>
             <td class="tableValue">
-                <% if key.get_state == "Stored" %>
+                <% if current_user.rank_id > 1 and key.get_state == "Stored" %>
                     <%= link_to edit_admin_storage_path(key.id) do %>
                         <i class="tableIcon fa fa-2x fa-wrench"></i>
                     <% end %>

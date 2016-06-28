@@ -3,26 +3,35 @@
 
 <div class="boxWrapper group">
 
-    <%= link_to admin_users_path, class: [:box, :boxLink] do %>
-        <h3 class="boxHeading">Users</h3>
-            <i class="boxIcon fa fa-5x fa-user"></i>
-                <p class="boxText">Display a list of all users registered on the system.</p>
-    <% end %>
+    <% if current_user.rank_id > 1 %>
 
-    <%= link_to admin_keys_path, class: [:box, :boxLink] do %>
-        <h3 class="boxHeading">Keys</h3>
-            <i class="boxIcon fa fa-5x fa-key"></i>
-                <p class="boxText">Display a list of all keys and their associated users.</p>
-    <% end %>
+        <%= link_to admin_users_path, class: [:box, :boxLink] do %>
+            <h3 class="boxHeading">Users</h3>
+                <i class="boxIcon fa fa-5x fa-user"></i>
+                    <p class="boxText">Display a list of all users registered on the system.</p>
+        <% end %>
 
-    <%= link_to admin_locations_path, class: [:box, :boxLink] do %>
-        <h3 class="boxHeading">Locations</h3>
-            <i class="boxIcon fa fa-5x fa-map-marker"></i>
-                <p class="boxText">Display a list of all locations and their capacities.<br></p>
+        <%= link_to admin_keys_path, class: [:box, :boxLink] do %>
+            <h3 class="boxHeading">Keys</h3>
+                <i class="boxIcon fa fa-5x fa-key"></i>
+                    <p class="boxText">Display a list of all keys and their associated users.</p>
+        <% end %>
+
+    <% end %>
+    <% if current_user.rank_id > 0 %>
+
+        <%= link_to admin_locations_path, class: [:box, :boxLink] do %>
+            <h3 class="boxHeading">Locations</h3>
+                <i class="boxIcon fa fa-5x fa-map-marker"></i>
+                    <p class="boxText">Display a list of all locations and their capacities.<br></p>
+        <% end %>
+
     <% end %>
 
 </div>
 
-<div class="graphWrapper">
-    <%= column_chart @keys.joins(:location).group(:'locations.name').count, library: {hAxis: {title: "Locations"}, vAxis: {title: "Number of Keys"}, title: "Number of Keys to Locations"} %>
-</div>
+<% if current_user.rank_id > 1 %>
+    <div class="graphWrapper">
+        <%= column_chart @keys.joins(:location).group(:'locations.name').count, library: {hAxis: {title: "Locations"}, vAxis: {title: "Number of Keys"}, title: "Number of Keys to Locations"} %>
+    </div>
+<% end %>
